@@ -1,0 +1,14 @@
+﻿==================================================================================================================
+
+IGNORE .suo FILES AND DELETE A FILE ON THE REPO
+
+http://stackoverflow.com/questions/72298/should-i-add-the-visual-studio-suo-and-user-files-to-source-control
+http://stackoverflow.com/questions/28759841/gitignore-doesnt-ignore-suo-visual-studio-file
+http://stackoverflow.com/questions/11628418/git-cant-ignore-suo-file/11629271#11629271
+
+in the root folder for the solution i.e. Websites.sln execute the GIT commands below
+
+git rm --cached project1.suo
+git commit -m "Delete suo file from repository"
+
+==================================================================================================================
