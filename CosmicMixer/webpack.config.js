@@ -30,7 +30,7 @@ var clientBundleConfig = merge(sharedConfig, {
     plugins: [
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require('./wwwroot/dist/vendor-manifest.json')
+            manifest: require('./wwwroot/dist/vendor-sampleapp-manifest.json')
         })
     ].concat(isDevBuild ? [] : [
         // Plugins that apply in production builds only

@@ -20,10 +20,10 @@ import { CounterComponent } from './components/counter/counter.component';
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
+			{ path: 'sampleapp/home', component: HomeComponent },
+			{ path: 'sampleapp/counter', component: CounterComponent },
+			{ path: 'sampleapp/fetch-data', component: FetchDataComponent },
+			{ path: '**', redirectTo: 'sampleapp/home' }
         ])
     ]
 })
