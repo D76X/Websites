@@ -1,0 +1,26 @@
+{
+    "version": "0.1.0",
+    "command": " ",
+    "isShellCommand": true,
+    "args": [],
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": ["dotnet","build","${workspaceRoot}/CosmicMixer.csproj"],
+            "isBuildCommand": false,
+            // "isWatching": false,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "webpack-sample-app",
+            "args": ["webpack","--config","${workspaceRoot}/webpack.config.js" ],
+            "echoCommand": true
+        },
+        {
+            "taskName": "webpack-sample-app-vendor",
+            "args": ["webpack","--config","${workspaceRoot}/webpack.config.vendor.js" ],
+            "echoCommand": true
+        }
+    ]
+}
