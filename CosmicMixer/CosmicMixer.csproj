@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Apps\**" />
+    <Content Remove="Apps\**" />
+    <EmbeddedResource Remove="Apps\**" />
+    <None Remove="Apps\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/dist\New Text Document.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\dist\site.css" />
   </ItemGroup>
 
@@ -44,10 +55,6 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Apps\" />
   </ItemGroup>
 
 </Project>
