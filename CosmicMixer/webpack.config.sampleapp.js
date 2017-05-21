@@ -41,7 +41,7 @@ var clientBundleConfig = merge(sharedConfig, {
 
 // Configuration for server-side (prerendering) bundle suitable for running in Node
 var serverBundleConfig = merge(sharedConfig, {
-    entry: { 'main-server': './ClientApp/boot-server.ts' },
+    entry: { 'main-server-sampleapp': './ClientApp/boot-server-sampleapp.ts' },
     output: {
         libraryTarget: 'commonjs',
         path: path.join(__dirname, './ClientApp/dist')
