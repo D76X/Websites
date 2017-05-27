@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CosmicMixer.Areas.Test.Controllers
 {
-    [Area("Test")]
-    public class TestController : Controller
+    [Area("TestApp")]
+    public class HomeController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
