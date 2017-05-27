@@ -1,0 +1,10 @@
+﻿ENTRY TO THE HOME CONTROLLER
+http://localhost:63757
+
+ENTRY TO THE SAMPLE APPLICATION - SAMPLEAPP AREA
+http://localhost:63757/sampleapp/home/index
+http://localhost:63757/sampleapp/home
+
+ENTRY TO THE TEST APPLICATION - TEST AREA
+http://localhost:63757/testapp/home/index
+http://localhost:63757/testapp/home
