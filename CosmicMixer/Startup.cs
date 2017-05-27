@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace CosmicMixer
 {
@@ -42,8 +43,17 @@ namespace CosmicMixer
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
-                    HotModuleReplacement = true                    
+                    HotModuleReplacement = true,
+                    // ReactHotModuleReplacement = true,
+                    ConfigFile = @"webpack.config.sampleapp.js"
                 });
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
+                    HotModuleReplacement = true,
+                    // ReactHotModuleReplacement = true,
+                    ConfigFile = @"webpack.config.testapp.js"
+                });
+                
+                
             }
             else
             {

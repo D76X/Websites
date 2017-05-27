@@ -24,13 +24,13 @@ var sharedConfig = {
 
 // Configuration for client-side bundle suitable for running in browsers
 var clientBundleConfig = merge(sharedConfig, {
-    entry: { 'main-client-sampleapp': './ClientApp/boot-client-sampleapp.ts' },
+    entry: { 'main-client-testapp': './ClientApp/boot-client-testapp.ts' },
     output: { path: path.join(__dirname, './wwwroot/dist') },
     devtool: isDevBuild ? 'inline-source-map' : null,
     plugins: [
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require('./wwwroot/dist/vendor-sampleapp-manifest.json')
+            manifest: require('./wwwroot/dist/vendor-testapp-manifest.json')
         })
     ].concat(isDevBuild ? [] : [
         // Plugins that apply in production builds only
@@ -41,7 +41,7 @@ var clientBundleConfig = merge(sharedConfig, {
 
 // Configuration for server-side (prerendering) bundle suitable for running in Node
 var serverBundleConfig = merge(sharedConfig, {
-    entry: { 'main-server': './ClientApp/boot-server.ts' },
+    entry: { 'main-server-testapp': './ClientApp/boot-server-testapp.ts' },
     output: {
         libraryTarget: 'commonjs',
         path: path.join(__dirname, './ClientApp/dist')

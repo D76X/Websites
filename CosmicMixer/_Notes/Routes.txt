@@ -8,3 +8,6 @@ http://localhost:63757/sampleapp/home
 ENTRY TO THE TEST APPLICATION - TEST AREA
 http://localhost:63757/testapp/home/index
 http://localhost:63757/testapp/home
+
+Failed to load resource: the server responded with a status of 404 (Not Found)
+:63757/dist/vendor-testapp.css
