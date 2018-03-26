@@ -1,3 +1,4 @@
+**/*.cache
 **/.vs
 **/.vscode
 **/OldCosmicMixer
@@ -5,3 +6,4 @@
 **/CosmicMixer/node_modules
 **/CosmicMixer/bin
 **/CosmicMixer/obj
+**/CosmicMixer/obj/*.cache
