@@ -5,6 +5,9 @@
     <UserSecretsId>aspnet-CosmicMixer-1791BE02-B6EE-4EA3-AC23-F964A89F17B8</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
@@ -16,10 +19,6 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Apps\" />
   </ItemGroup>
 
 </Project>

@@ -1,2 +1,7 @@
-/.vs
-/.OldCosmicMixer
+**/.vs
+**/.vscode
+**/OldCosmicMixer
+**/CosmicMixer/.vscode
+**/CosmicMixer/node_modules
+**/CosmicMixer/bin
+**/CosmicMixer/obj

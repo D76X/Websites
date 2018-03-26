@@ -12,6 +12,16 @@ namespace CosmicMixer.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Message"] = "Hello World ComeBack";
+            return View();
+        }
+
+        /// <summary>
+        /// Route 
+        /// ../home/aspdotnetproject
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult AspDotNetProject() {
             return View();
         }
 
