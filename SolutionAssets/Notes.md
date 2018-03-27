@@ -115,21 +115,24 @@ There are a few ways to achieve this sort of set up we have used the following.
     ```
     
     Few things to notice.
+
+    ```proxy: "localhost:53436"``` in the initialization of **browserSync** create a proxy to port 53436 on the localhost that is when the **asp.net** **Kestrel** web server is listening to. By default browser sync listen to request on http://localhost:3000/ but by proxying it to ```"localhost:53436"``` it is possible to forward the request to the asp.net site instead. 
     
-    In this version of the ```guplfile.js``` are that we set a watch using gulp instead of BrowserSync which would be also possible. The watch is all all ```*.html, *.css, *.cshtml```. It is important to include the ```*.cshtml``` as well because **.cshtml files are not compiled files** hence the process started with ```dotnet watch run``` does not rebuild the project when *cshtml files are changed as it is sufficient to just reload the page to see the changes. 
-
-    The 
-
+    In this version of the ```guplfile.js``` we set a watch using gulp instead of BrowserSync which would be also possible. The watch is on all ```*.html, *.css, *.cshtml```. It is important to include the ```*.cshtml``` as well because **.cshtml files are not compiled files** hence the process started with ```dotnet watch run``` does not rebuild the project when *cshtml files are changed as it is sufficient to just reload the page in the browser to see the changes take effect. 
 
 5. It is now possble to run the gulp task runner so that the ```'browser-sync'``` is executed and browsersync becomes available. This also kicks start the watch over the changes to the files given to the gulp watch and any changes to such files are detected browsersync is reloaded in real time.
 However, there are a few more things to know in order to run gulp, refer to the following posts for the details. In essence if **Gulp** is not istalled globally and your version of npm is **>5.2** you can run gulp locally to the project using the following command in the terminal when it is executed in the project folder.
 
     ```npx gulp```
 
-    Reference 
+
+References
     
-    [Why do we need to install gulp globally and locally?
-](https://stackoverflow.com/questions/22115400/why-do-we-need-to-install-gulp-globally-and-locally)
+- [Why do we need to install gulp globally and locally?
+](https://stackoverflow.com/questions/22115400/why-do-we-need-to-install-gulp-globally-and-locally) 
+- [Browsersync Time-saving synchronised browser testing.](https://browsersync.io/) 
+- [Browsersync + Gulp.js](https://browsersync.io/docs/gulp)
+- [Browsersync options](https://browsersync.io/docs/options)
 
 ---
 ### Webpack
