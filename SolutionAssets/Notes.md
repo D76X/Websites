@@ -88,8 +88,50 @@ There are a few ways to achieve this sort of set up we have used the following.
 
     -```npm install browser-sync gulp --save-dev```
 
----
+4. Create ```gulpfile.js``` at the root of you project then add the following gulp task to it. Notice tha in the script below the default task is set to run ```'browser-sync'``` as ```default``` task but this might change in time according to you needs.
 
+    ```
+    var gulp = require('gulp');
+    var browserSync = require('browser-sync').create();
+
+    gulp.task( 'default', [ 'browser-sync' ] )
+
+    gulp.task('browser-sync', function() {
+
+        browserSync.init({        
+            proxy: "localhost:53436",
+            ui: {
+                port: 53437
+            },     
+        });
+
+        
+        // watch on every file in evry folder - it works but it is heavy handed
+        // gulp.watch(["./**/*.*"]).on('change', browserSync.reload);
+        
+        gulp.watch(["./**/*.html", "./**/*.css", "./**/*.cshtml"])
+        .on('change', browserSync.reload);
+    })  
+    ```
+    
+    Few things to notice.
+    
+    In this version of the ```guplfile.js``` are that we set a watch using gulp instead of BrowserSync which would be also possible. The watch is all all ```*.html, *.css, *.cshtml```. It is important to include the ```*.cshtml``` as well because **.cshtml files are not compiled files** hence the process started with ```dotnet watch run``` does not rebuild the project when *cshtml files are changed as it is sufficient to just reload the page to see the changes. 
+
+    The 
+
+
+5. It is now possble to run the gulp task runner so that the ```'browser-sync'``` is executed and browsersync becomes available. This also kicks start the watch over the changes to the files given to the gulp watch and any changes to such files are detected browsersync is reloaded in real time.
+However, there are a few more things to know in order to run gulp, refer to the following posts for the details. In essence if **Gulp** is not istalled globally and your version of npm is **>5.2** you can run gulp locally to the project using the following command in the terminal when it is executed in the project folder.
+
+    ```npx gulp```
+
+    Reference 
+    
+    [Why do we need to install gulp globally and locally?
+](https://stackoverflow.com/questions/22115400/why-do-we-need-to-install-gulp-globally-and-locally)
+
+---
 ### Webpack
 
 http://www.ryansouthgate.com/2017/08/29/asp-net-core-and-webpack-part-1/
