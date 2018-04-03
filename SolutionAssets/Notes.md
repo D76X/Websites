@@ -18,8 +18,23 @@
 
 ## Set up the APS.NET Core application
 
+- [APS.NET Core Fundamentals](https://app.pluralsight.com/library/courses/aspdotnet-core-fundamentals/table-of-contents?aid=701j0000001heIpAAI)
 - [TUTORIAL: CREATING BASIC ASP.NET CORE + ANGULAR 4 APPLICATION IN WINDOWS 10](https://www.infopulse.com/blog/tutorial-creating-basic-asp-net-core-angular-4-application-in-windows-10/)
  
+## Configuration 
+
+Startup.cs is where most of the configuration is added the Startup.Configuration implements IConfiguration and IConfiguration is just a bit more of a dictionary. There are four sources of configuration which are picked up by the run time in the presented order below that is if a later source of setting redeclares a setting with the same key of a setting already added by ony of the upstream sources the setting value will be overwritten. 
+
+1. appsettings.json
+2. User secrets
+3. Environmental variables
+4. Command line arguments => example ```dotnet (watch) run Greetings="Haloha!"```
+
+
+## launchSettings.json
+
+The file ```./Properties/launchSettings.json``` controls the properties and settings of the **dotnet** process that is used to run the site when ```dotnet run``` or ```dotnet watch run``` are used. For example the port number on which the **Kestrel** web server will be listening to is set in this file.
+
 ---
 
 ### Setting up the watcher build in VSCODE or VS to rebuild and redeploy on changing \*.cs/*.ts.
