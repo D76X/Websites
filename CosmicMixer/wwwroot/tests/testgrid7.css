@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.test {
+  background-color: yellow;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* 
+The body is defined as a grid. 
+Its grid template declares 2 rows and 2 columns.
+The first row takes the side-bar and the right areas.
+The second row takes the footer and the footer.
+In the whole the areas in the grid are 2*2.  
+Notice that I use side-bar instead of sidebar as for
+some strange reason the latter seems to go boom in chrome!
+*/
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: auto 50px;
+  grid-template-columns: 12% auto;
+  grid-template-areas:
+    "side-bar right"
+    "footer footer";
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  float: right;
+}
+ul li {
+  display: inline;
+}
+ul li a {
+  color: #fff;
+  padding: 15px;
+}
+
+/* 
+explicit names for the grid lines 
+*/
+header {
+  background-color: #41c7c7;
+  display: grid;
+  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
+}
+
+img {
+  max-width: 100%;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+footer {
+  grid-area: footer;
+  background: lightgray;
+}
+
+#logo {
+  padding: 15px;
+  margin-left: 15px;
+  background-color: #f3f1c7;
+  color: #298383;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+}
+
+section#hero {
+  background-color: #36adad;
+  padding: 2em;
+  border-top: 5px solid #2ea0a0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+#content h1 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#content p {
+  color: #fff;
+}
+
+#tree {
+  border-radius: 50%;
+  width: 200 px;
+  height: 200 px;
+}
+
+/* 
+notice that I use side-bar instead of sidebar 
+because ofr some strange reason the latter seems 
+to go boom in chrome!
+Notice that this class refers the side-bar area
+defined in the grid above. 
+*/
+.side-bar {
+  grid-area: side-bar;
+  background-color: #1c9090;
+  color: #fff;
+  padding: 1em;
+}
+
+/*
+The main is a grid with two rows.
+The first row takes the header.
+The second row takes the hero section.
+*/
+/*
+A third row has been added.
+The third row takes the #features div.
+*/
+.main {
+  grid-area: right;
+  grid-template-rows: 51px fit-content(30%) 40%;
+  display: grid;
+}
+
+/*
+This is were the new action is.
+*/
+
+#features {
+  /* background-color: yellow */
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  
+  /*
+  align-items is used to specify the columns
+  allignment within their grid. 
+  The possible values are 
+  start, end, center and stretch.
+  With strech the columns fill the available 
+  height of the containing grid.
+  With start the columns start at the tope of 
+  the containing grid and extend below as 
+  necessary.
+  With end the columns seats at the bottom of
+  the containing grid.
+  */
+  /* align-items: stretch; */
+  align-items: start;
+  align-items: end;
+  align-items: center;
+
+  /* grid-template-rows: repeat(2, auto); */
+  
+  /* in one shot */
+  /* grid-gap: 10px 30px; */  
+  
+  /* grid-column-gap: 10px;
+  grid-row-gap: 10px; */
+}
+
+#features i {
+  font-size: 2em;
+}
+
+ul#features {
+  margin: 0;
+  padding: 0;
+}
+
+ul#features li {
+  background-color: lightgray;
+  padding: 1em;
+}
+
+ul#features li p {
+  color: #4c4c4c
+}
+
+section#info {
+  background-color: #f2f2f2;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: space-around;
+}
+
+#img-analytics {  
+  width: 200 px;
+  align-self: center;
+}
