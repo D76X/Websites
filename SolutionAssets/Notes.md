@@ -171,3 +171,7 @@ https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minificati
 #### Task Runner Explorer errors parsing gulpfine.js
 
 [Error running Gulpfile from Visual Studio 2015 task runner](https://stackoverflow.com/questions/40372213/error-running-gulpfile-from-visual-studio-2015-task-runner)
+
+### CDNs
+
+https://www.asp.net/ajax/cdn?WT.mc_id=12833-DEV-sitepoint-othercontent#ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18

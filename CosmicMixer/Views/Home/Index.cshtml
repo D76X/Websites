@@ -1,9 +1,17 @@
 ﻿@{
     Layout = "_Layout";
-    // ViewData["Title"] = "Index";
+    // ViewData["Title"] = "Index";  
 }
 
-<h2>Index Page no chage 7</h2>
+<h2>Index Page no chage 8</h2>
 <p>
 Message: @ViewData["Message"]
 </p>
+
+@section scripts {    
+    <script type="text/javascript">         
+         $(document).ready(function () {
+            alert("Hello World from jQuery!"); 
+        });
+    </script>
+}
