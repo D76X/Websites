@@ -10,7 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC8956D8-44F4-4E6E-A4EC-DFAF96B41949}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		Notes.md = Notes.md
+		SolutionAssets\Notes.md = SolutionAssets\Notes.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{A20D9D3F-8B50-4185-AF98-D7FE1E15833B}"
