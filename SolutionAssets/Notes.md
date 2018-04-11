@@ -150,14 +150,24 @@ References
 - [Browsersync options](https://browsersync.io/docs/options)
 
 ---
+
 ### Webpack
 
 http://www.ryansouthgate.com/2017/08/29/asp-net-core-and-webpack-part-1/
 https://app.pluralsight.com/library/courses/webpack-fundamentals/table-of-contents
 
+***
+
 ### BrowserLink
 
 https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink?tabs=aspnetcore2x 
 
+***
+
 ### Use Gulp?
+
 https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification?tabs=visual-studio%2Caspnetcore2x
+
+#### Task Runner Explorer errors parsing gulpfine.js
+
+[Error running Gulpfile from Visual Studio 2015 task runner](https://stackoverflow.com/questions/40372213/error-running-gulpfile-from-visual-studio-2015-task-runner)
