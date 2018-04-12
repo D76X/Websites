@@ -3,7 +3,7 @@
 <h1>Index Page 2</h1>
 
 <section id="tiles">
-    <div class="grid-teils">
+    <div id="container-teils" class="grid-teils">
         <div>1</div>
         <div>2</div>
         <div>3</div>
@@ -15,9 +15,18 @@
     </div>
 </section>
 
+<button id="btn-load-teils">Load Teils</button>
+
 @section scripts {
 <script type="text/javascript">
     $(document).ready(function () {
+
         //alert("Hello World from jQuery!");
+
+        $("#btn-load-teils").click(function () {
+            let containerTeils = $("#container-teils");
+            let itemsCount = containerTeils.children().length;
+            containerTeils.append('<div>' + (++itemsCount) + '</div>');
+        })
     });
 </script> }
