@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmicMixer", "CosmicMixer\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldCosmicMixer", "OldCosmicMixer\OldCosmicMixer.csproj", "{6157097E-1F86-4F8C-9AA9-F2C1D60DDBF8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC8956D8-44F4-4E6E-A4EC-DFAF96B41949}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{DC8956D8-44F4-4E6E-A4EC-DFAF96B41949}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		SolutionAssets\Notes.md = SolutionAssets\Notes.md
+		Notes\CSS.md = Notes\CSS.md
+		Notes\Notes.md = Notes\Notes.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{A20D9D3F-8B50-4185-AF98-D7FE1E15833B}"
