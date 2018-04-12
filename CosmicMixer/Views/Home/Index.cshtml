@@ -19,14 +19,29 @@
 
 @section scripts {
 <script type="text/javascript">
+
     $(document).ready(function () {
 
-        //alert("Hello World from jQuery!");
-
+        /*
         $("#btn-load-teils").click(function () {
             let containerTeils = $("#container-teils");
             let itemsCount = containerTeils.children().length;
             containerTeils.append('<div>' + (++itemsCount) + '</div>');
         })
+        */
+
+        $(window).scroll(function () {
+
+            let wnd = $(window);
+            let doc = $(document);
+
+            if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
+
+                let containerTeils = $("#container-teils");
+                let itemsCount = containerTeils.children().length;
+                containerTeils.append('<div>' + (++itemsCount) + '</div>');
+            }
+        })
     });
+
 </script> }
