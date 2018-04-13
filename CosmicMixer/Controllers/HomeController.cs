@@ -12,8 +12,14 @@ namespace CosmicMixer.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Message"] = "Hello World ComeBack";
             return View();
+        }
+
+        public IActionResult GetTiles(int fromId)
+        {
+            object data = new { Id = fromId + 1 };
+
+            return Json(data);
         }
 
         /// <summary>
@@ -21,7 +27,8 @@ namespace CosmicMixer.Controllers
         /// ../home/aspdotnetproject
         /// </summary>
         /// <returns></returns>
-        public IActionResult AspDotNetProject() {
+        public IActionResult AspDotNetProject()
+        {
             return View();
         }
 

@@ -35,10 +35,4 @@
 
 ---
 
-## JQuery
 
-### Difference between window height and document height
-
-- [Difference between window height and document height](https://www.youtube.com/watch?v=Slx7hen576Q)  
-
----

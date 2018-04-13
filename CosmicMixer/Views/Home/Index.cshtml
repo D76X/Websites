@@ -15,20 +15,12 @@
     </div>
 </section>
 
-<button id="btn-load-teils">Load Teils</button>
+<button id="btn-get-data" type="button">Get Data</button>
 
 @section scripts {
 <script type="text/javascript">
 
     $(document).ready(function () {
-
-        /*
-        $("#btn-load-teils").click(function () {
-            let containerTeils = $("#container-teils");
-            let itemsCount = containerTeils.children().length;
-            containerTeils.append('<div>' + (++itemsCount) + '</div>');
-        })
-        */
 
         $(window).scroll(function () {
 
@@ -41,6 +33,16 @@
                 let itemsCount = containerTeils.children().length;
                 containerTeils.append('<div>' + (++itemsCount) + '</div>');
             }
+        })
+
+        $("#btn-get-data").click(function () {
+
+            $.getJSON("http://localhost:3000/Home/GetTiles",
+                { fromId: 1 },
+                function (result) {
+                    alert(JSON.stringify(result));
+                    console.log(JSON.stringify(result));
+                })
         })
     });
 
