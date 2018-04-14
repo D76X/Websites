@@ -40,8 +40,12 @@
             $.getJSON("http://localhost:3000/Home/GetTiles",
                 { fromId: 1 },
                 function (result) {
-                    alert(JSON.stringify(result));
+                    /*alert(JSON.stringify(result));*/
                     console.log(JSON.stringify(result));
+                }).then(function (tiles) {
+                    $.each(tiles, function (i, tile) {
+                        console.log(JSON.stringify(tile));
+                    })
                 })
         })
     });
