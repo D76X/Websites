@@ -37,17 +37,26 @@
 
         $("#btn-get-data").click(function () {
 
-            $.getJSON("http://localhost:3000/Home/GetTiles",
+            $.getJSON(
+                "http://localhost:3000/Home/GetTiles",
                 { fromId: 1 },
                 function (result) {
                     /*alert(JSON.stringify(result));*/
                     console.log(JSON.stringify(result));
-                }).then(function (tiles) {
+                })
+                .then(
+                function (tiles) {
                     $.each(tiles, function (i, tile) {
                         console.log(JSON.stringify(tile));
                     })
-                })
+                },
+                function (jqXHR, textStatus, err) {
+                    console.log(err);
+                    console.log(textStatus);
+                    alert(JSON.stringify(jqXHR));
+                });
         })
     });
 
-</script> }
+</script>    
+}

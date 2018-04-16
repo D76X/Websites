@@ -46,6 +46,7 @@ namespace CosmicMixer.Controllers
 
             var data = new List<Tile>() { tile1, tile2, tile3 };
 
+            return Error();
             return Json(data);
         }
 
