@@ -33,3 +33,15 @@ gulp.task('copy-node_modules-jquery', function () {
     }
     return 0;
 });
+
+gulp.task('copy-node_modules-handlebars', function () {
+    try {
+
+        gulp.src('./node_modules/handlebars/dist/handlebars.min.js')
+            .pipe(gulp.dest('./wwwroot/lib/handlebars'));
+    }
+    catch (e) {
+        return -1;
+    }
+    return 0;
+});
