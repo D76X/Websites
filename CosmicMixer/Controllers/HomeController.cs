@@ -11,16 +11,32 @@ namespace CosmicMixer.Controllers
     public class Tile
     {
         public int Id { get; private set; }
+        public string Header { get; private set; }
         public string Title { get; private set; }
         public string UrlImage { get; private set; }
-        public string UrlArticle { get; private set; }
+        public string UrlContent { get; private set; }
+        public string Author { get; private set; }
+        public string UrlAuthor { get; private set; }
+        public string Published { get; private set; }
 
-        public Tile(int id, string title, string urlImage, string urlAritcle)
-        {
+        public Tile(
+            int id,
+            string header,             
+            string title, 
+            string urlImage, 
+            string urlContent, 
+            string author,
+            string urlAuthor,
+            string publisged)
+        {            
             this.Id = id;
+            this.Header = header;
             this.Title = title;
             this.UrlImage = urlImage;
-            this.UrlArticle = urlAritcle;
+            this.UrlContent = urlContent;
+            this.Author = author;
+            this.UrlAuthor = urlAuthor;
+            this.Published = publisged;
         }
     }
 
@@ -35,14 +51,27 @@ namespace CosmicMixer.Controllers
         {
             if (fromId < 0) {
                 return Error();
-            }       
+            }
             
-            var tile1 = new Tile(fromId + 1, "Tile-1", "http://localhost:3000/tileimage1", "http://localhost:3000/article1");
-            var tile2 = new Tile(fromId + 2, "Tile-2", "http://localhost:3000/tileimage2", "http://localhost:3000/article2");
-            var tile3 = new Tile(fromId + 3, "Tile-3", "http://localhost:3000/tileimage3", "http://localhost:3000/article3");
+            var baseUrl = "http://localhost:3000/";
+            int tileId = fromId;
+            var data = new List<Tile>();
 
-            var data = new List<Tile>() { tile1, tile2, tile3 };
-            
+            for (int i = 0; i < 3; i++) {
+
+                data.Add(new Tile(
+                    tileId,
+                    $"header{tileId}",
+                    $"Title{tileId}",
+                    $"{baseUrl}tileimages/{tileId}",
+                    $"{baseUrl}content/{tileId}",
+                    $"Davide Spano",
+                    $"{baseUrl}authors/{tileId}",
+                    DateTime.Today.Date.ToString()));
+
+                ++tileId;
+            }
+
             return Json(data);
         }
 

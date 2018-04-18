@@ -52,6 +52,15 @@
 
     <script type="text/javascript">
 
+        function renderTile() {
+
+            var template = $("#tile-template").html();
+            var compiled = Handlebars.compile(template);
+            var context = None;
+            var rendered = compiled(context); 
+            $("#last-tile").html(rendered);
+        }
+
         $(document).ready(function () {
 
             $(window).scroll(function () {
