@@ -33,20 +33,16 @@ namespace CosmicMixer.Controllers
 
         public IActionResult GetTiles(int fromId)
         {
-            //object data = new { Id = fromId + 1 };
-
-            // object tile1 = new { Id = fromId + 1 };
-            // object tile2 = new { Id = fromId + 2 };
-            // object tile3 = new { Id = fromId + 3 };
-            // object data = new object[] { tile1, tile2, tile3 };
-
+            if (fromId < 0) {
+                return Error();
+            }       
+            
             var tile1 = new Tile(fromId + 1, "Tile-1", "http://localhost:3000/tileimage1", "http://localhost:3000/article1");
             var tile2 = new Tile(fromId + 2, "Tile-2", "http://localhost:3000/tileimage2", "http://localhost:3000/article2");
             var tile3 = new Tile(fromId + 3, "Tile-3", "http://localhost:3000/tileimage3", "http://localhost:3000/article3");
 
             var data = new List<Tile>() { tile1, tile2, tile3 };
-
-            return Error();
+            
             return Json(data);
         }
 

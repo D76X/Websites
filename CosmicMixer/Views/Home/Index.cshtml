@@ -28,6 +28,10 @@
 </section>
 
 <button id="btn-get-data" type="button">Get Data</button>
+<div>
+    <input id="checkbox-get-error" type="checkbox"/>
+    <label for="checkbox-get-error">Error?</label>
+</div>
 
 @section scripts {
 
@@ -65,9 +69,17 @@
 
             $("#btn-get-data").click(function () {
 
+                var lastId = 1
+
+                if ($("#checkbox-get-error").is(":checked")) {
+                    lastId = -1;
+                }
+
+                console.log(lastId);
+
                 $.getJSON(
                     "http://localhost:3000/Home/GetTiles",
-                    { fromId: 1 },
+                    { fromId: lastId },
                     function (result) {
                         /*alert(JSON.stringify(result));*/
                         console.log(JSON.stringify(result));
