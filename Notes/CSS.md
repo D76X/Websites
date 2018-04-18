@@ -2,7 +2,17 @@
 
 ## Positioning
 
+---
+
+### The problem with divs used as containers
+
+1. [Dealing with a containing div that contains only floated elements](http://befused.com/css/container-floated-elements)
+
+---
+
 ### How to center an item within its container
+
+---
 
 ### Display block vs inline
 
