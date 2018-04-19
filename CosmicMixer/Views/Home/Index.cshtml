@@ -33,8 +33,6 @@
     <label for="checkbox-get-error">Error?</label>
 </div>
 
-<button id="btn-test-template" type="button">Add Template</button>
-
 @section scripts {
 
     <script id="tile-template" type="text/x-handlebars-template">
@@ -54,30 +52,51 @@
 
     <script type="text/javascript">
 
-        function renderTile() {
+        function renderTile(context) {
 
             var template = $("#tile-template").html();
             var compiled = Handlebars.compile(template);
-
-            var context = {
-                header: "Tile Header",
-                urlContent: "http://localhost:3000/content/1234",
-                urlImage: "/images/tile_placeholder_red_300x150.svg",
-                title: "The Title for the tile",
-                published: "today",
-                author: "Davide Spano",
-                urlAuthor: "http://localhost:3000/author/1234"
-            };
-
-            var rendered = compiled(context); 
+            var rendered = compiled(context);
             $("#container-teils").append(rendered);
         }
 
-        $(document).ready(function () {
+        function getTiles() {
 
-            $("#btn-test-template").click(function () {
-                renderTile();
-            });
+            var lastId = 1
+
+            if ($("#checkbox-get-error").is(":checked")) {
+                lastId = -1;
+            }
+
+            console.log(lastId);
+
+            $.getJSON(
+                "http://localhost:3000/Home/GetTiles",
+                { fromId: lastId },
+                function (result) {
+                    /*alert(JSON.stringify(result));*/
+                    console.log(JSON.stringify(result));
+                })
+                .then(
+                function (tiles) {
+                    $.each(tiles, function (i, tile) {
+                        console.log(JSON.stringify(tile));
+                        renderTile(tile);
+                    })
+                },
+                function (jqXHR, textStatus, err) {
+                    console.log(err);
+                    console.log(textStatus);
+                    alert(JSON.stringify(jqXHR));
+                });
+        };
+
+        $(document).ready(function () {            
+
+            $("#btn-get-data").click(function () {
+                getTiles();
+            })
+
 
             $(window).scroll(function () {
 
@@ -85,42 +104,9 @@
                 let doc = $(document);
 
                 if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
-
-                    let containerTeils = $("#container-teils");
-                    let itemsCount = containerTeils.children().length;
-                    containerTeils.append('<div>' + (++itemsCount) + '</div>');
+                    getTiles();
                 }
-            })
-
-            $("#btn-get-data").click(function () {
-
-                var lastId = 1
-
-                if ($("#checkbox-get-error").is(":checked")) {
-                    lastId = -1;
-                }
-
-                console.log(lastId);
-
-                $.getJSON(
-                    "http://localhost:3000/Home/GetTiles",
-                    { fromId: lastId },
-                    function (result) {
-                        /*alert(JSON.stringify(result));*/
-                        console.log(JSON.stringify(result));
-                    })
-                    .then(
-                    function (tiles) {
-                        $.each(tiles, function (i, tile) {
-                            console.log(JSON.stringify(tile));
-                        })
-                    },
-                    function (jqXHR, textStatus, err) {
-                        console.log(err);
-                        console.log(textStatus);
-                        alert(JSON.stringify(jqXHR));
-                    });
-            })
+            });
         });
 
     </script>
