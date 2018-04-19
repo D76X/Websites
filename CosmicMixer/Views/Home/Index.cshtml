@@ -23,7 +23,7 @@
                 <h5>Article title</h5>
             </div>
             <span>Published: , Author <a href="#/me">ME</a></span>
-        </div>
+        </div>        
     </div>
 </section>
 
@@ -32,6 +32,8 @@
     <input id="checkbox-get-error" type="checkbox"/>
     <label for="checkbox-get-error">Error?</label>
 </div>
+
+<button id="btn-test-template" type="button">Add Template</button>
 
 @section scripts {
 
@@ -56,12 +58,26 @@
 
             var template = $("#tile-template").html();
             var compiled = Handlebars.compile(template);
-            var context = None;
+
+            var context = {
+                header: "Tile Header",
+                urlContent: "http://localhost:3000/content/1234",
+                urlImage: "/images/tile_placeholder_red_300x150.svg",
+                title: "The Title for the tile",
+                published: "today",
+                author: "Davide Spano",
+                urlAuthor: "http://localhost:3000/author/1234"
+            };
+
             var rendered = compiled(context); 
-            $("#last-tile").html(rendered);
+            $("#container-teils").append(rendered);
         }
 
         $(document).ready(function () {
+
+            $("#btn-test-template").click(function () {
+                renderTile();
+            });
 
             $(window).scroll(function () {
 
