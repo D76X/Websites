@@ -3,6 +3,38 @@ html {
     height: 100%;
 }
 
+.grid-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "toprow" "middlerow" "bottomrow";
+    grid-row-gap: 1em;
+}
+
+.site-header {
+    grid-area: toprow;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid rgb(0, 95, 107);
+    font-size: 40px;
+}
+
+.grid-pagewrap {
+    grid-area: middlerow;
+}
+
+.site-footers {
+    grid-area: bottomrow;
+    height: 100px;
+    background-color: green;
+    border: 1px solid rgb(0, 95, 107);
+}
+
+.site-footer {
+    font-weight: bold;
+    font-size: 40px;
+}
+
 section#tiles .grid-teils {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

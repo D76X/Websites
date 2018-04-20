@@ -1,36 +1,60 @@
 ﻿@{ Layout = "_Layout"; }
 
-<h1>Index Page 2</h1>
+<div class="grid-main">
 
-<section id="tiles">
-    <div id="container-teils" class="grid-teils">
-        <div class="teil">1</div>
-        <div class="teil">2</div>
-        <div class="teil">3</div>
-        <div class="teil">4</div>
-        <div class="teil">5</div>
-        <div class="teil">6</div>
-        <div class="teil">7</div>
-        <div class="teil">8</div>
-        <div class="teil">
-            9
+    <header class="site-header">        
+        <div class="site-header-middle">           
             <a href="#">
-                <div class="teil-image-container">
-                    <img class="teil-image" src="~/images/tile_placeholder_red_300x150.svg" />
-                </div>
+                Cosmix Mixer
             </a>
-            <div>
-                <h5>Article title</h5>
-            </div>
-            <span>Published: , Author <a href="#/me">ME</a></span>
-        </div>        
-    </div>
-</section>
+        </div>
+    </header> 
+    
+    <div class="grid-pagewrap">
+        
+        <div class="sidebar">
 
-<button id="btn-get-data" type="button">Get Data</button>
-<div>
-    <input id="checkbox-get-error" type="checkbox"/>
-    <label for="checkbox-get-error">Error?</label>
+        </div>
+
+        <section id="tiles">
+            <div id="container-teils" class="grid-teils">
+                <div class="teil">1</div>
+                <div class="teil">2</div>
+                <div class="teil">3</div>
+                <div class="teil">4</div>
+                <div class="teil">5</div>
+                <div class="teil">6</div>
+                <div class="teil">7</div>
+                <div class="teil">8</div>
+                <div class="teil">
+                    9
+                    <a href="#">
+                        <div class="teil-image-container">
+                            <img class="teil-image" src="~/images/tile_placeholder_red_300x150.svg" />
+                        </div>
+                    </a>
+                    <div>
+                        <h5>Article title</h5>
+                    </div>
+                    <span>Published: , Author <a href="#/me">ME</a></span>
+                </div>
+            </div>
+        </section>
+
+        <button id="btn-get-data" type="button">Get Data</button>
+        <div>
+            <input id="checkbox-get-error" type="checkbox" />
+            <label for="checkbox-get-error">Error?</label>
+        </div>
+    
+    </div>
+    
+    <div class="site-footers">
+        <footer class="site-footer">
+            This is my footer
+        </footer>
+    </div>   
+
 </div>
 
 @section scripts {
