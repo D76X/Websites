@@ -21,6 +21,11 @@ html {
 
 .grid-pagewrap {
     grid-area: middlerow;
+    display: grid;
+    grid-template-columns: 5em auto;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar tiles";
+    grid-column-gap: 1em;
 }
 
 .site-footers {
@@ -33,6 +38,22 @@ html {
 .site-footer {
     font-weight: bold;
     font-size: 40px;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+.sidebar {
+    background-color: black;    
+}
+
+    .sidebar a {
+        color: #fff;
+    }
+
+section#tiles {
+    grid-area: tiles;
 }
 
 section#tiles .grid-teils {
