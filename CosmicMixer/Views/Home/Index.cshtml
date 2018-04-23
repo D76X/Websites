@@ -60,7 +60,7 @@
 @section scripts {
 
     <script id="tile-template" type="text/x-handlebars-template">
-        <div class="teil" data-id="{{id}}">            
+        <div class="teil" data-id="{{id}}">
             <div>{{header}}</div>
             <a href="{{urlContent}}">
                 <div class="teil-image-container">
@@ -92,7 +92,7 @@
             //    fromId = -1;
             //}
 
-            //console.log(fromId);
+            //console.log(fromId);           
 
             services.dataService
                 .getTiles(fromId, numTeils)
@@ -107,12 +107,34 @@
                     console.log(err);
                     console.log(textStatus);
                     alert(JSON.stringify(jqXHR));
+                })
+                .always(function () {
+                    console.log("always");
+                    $(window).on("scroll", ajaxScroll);
                 });
         };
 
-        $(document).ready(function () {
+        function ajaxScroll() {
 
-            var $containerTeils = $("#container-teils");
+            //$(window).off("scroll");
+            let $wnd = $(window);
+            let $doc = $(document);
+            let $containerTeils = $("#container-teils");
+
+            if ($wnd.scrollTop() >= $doc.height() - $wnd.height() - 10) {
+
+                var lastId = $containerTeils
+                    .find("div.teil:last-child")
+                    .attr("data-id");
+
+                console.log(lastId);
+                console.log(parseInt(lastId));
+
+                getTiles(parseInt(lastId) + 1, 9);
+            }
+        }
+
+        $(document).ready(function () {          
 
             $("#btn-get-data").click(function () {
                 getTiles();
@@ -120,23 +142,25 @@
 
             getTiles(1, 9)
 
-            $(window).scroll(function () {
+            //$(window).scroll(function () {
 
-                let wnd = $(window);
-                let doc = $(document);
+            //    let wnd = $(window);
+            //    let doc = $(document);
 
-                if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
+            //    if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
 
-                    var lastId = $containerTeils
-                        .find("div.teil:last-child")
-                        .attr("data-id");
+            //        var lastId = $containerTeils
+            //            .find("div.teil:last-child")
+            //            .attr("data-id");
 
-                    console.log(lastId);
-                    console.log(parseInt(lastId));
+            //        console.log(lastId);
+            //        console.log(parseInt(lastId));
 
-                    getTiles(parseInt(lastId)+1, 9);
-                }
-            });
+            //        getTiles(parseInt(lastId) + 1, 9);
+            //    }
+            //});
+
+            $(window).on("scroll", ajaxScroll);
         });
 
     </script>
