@@ -18,7 +18,7 @@
 
         <section id="tiles">
             <div id="container-teils" class="grid-teils">
-                <div class="teil">1</div>
+                @*<div class="teil">1</div>
                 <div class="teil">2</div>
                 <div class="teil">3</div>
                 <div class="teil">4</div>
@@ -37,7 +37,7 @@
                         <h5>Article title</h5>
                     </div>
                     <span>Published: , Author <a href="#/me">ME</a></span>
-                </div>
+                </div>*@
             </div>
         </section>
 
@@ -74,7 +74,7 @@
         </div>
     </script>
 
-    <script type="text/javascript">
+    <script type="text/javascript">        
 
         function renderTile(context) {
 
@@ -84,35 +84,28 @@
             $("#container-teils").append(rendered);
         }
 
-        function getTiles() {
+        function getTiles(fromId, numTeils) {            
 
-            var lastId = 1
+            //if ($("#checkbox-get-error").is(":checked")) {
+            //    fromId = -1;
+            //}
 
-            if ($("#checkbox-get-error").is(":checked")) {
-                lastId = -1;
-            }
+            //console.log(fromId);            
 
-            console.log(lastId);
-
-            $.getJSON(
-                "http://localhost:3000/Home/GetTiles",
-                { fromId: lastId },
-                function (result) {
-                    /*alert(JSON.stringify(result));*/
-                    console.log(JSON.stringify(result));
+            services.dataService
+            .getTiles(fromId, numTeils)                
+            .then(
+            function (tiles) {
+                $.each(tiles, function (i, tile) {
+                    console.log(JSON.stringify(tile));
+                    renderTile(tile);
                 })
-                .then(
-                function (tiles) {
-                    $.each(tiles, function (i, tile) {
-                        console.log(JSON.stringify(tile));
-                        renderTile(tile);
-                    })
-                },
-                function (jqXHR, textStatus, err) {
-                    console.log(err);
-                    console.log(textStatus);
-                    alert(JSON.stringify(jqXHR));
-                });
+            },
+            function (jqXHR, textStatus, err) {
+                console.log(err);
+                console.log(textStatus);
+                alert(JSON.stringify(jqXHR));
+            });
         };
 
         $(document).ready(function () {            
@@ -121,6 +114,7 @@
                 getTiles();
             })
 
+            getTiles(1, 9)
 
             $(window).scroll(function () {
 
@@ -128,7 +122,7 @@
                 let doc = $(document);
 
                 if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
-                    getTiles();
+                    getTiles(1,9);
                 }
             });
         });

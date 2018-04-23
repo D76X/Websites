@@ -47,7 +47,7 @@ namespace CosmicMixer.Controllers
             return View();
         }
 
-        public IActionResult GetTiles(int fromId)
+        public IActionResult GetTiles(int fromId, int numTeils)
         {
             if (fromId < 0) {
                 return Error();
