@@ -3,6 +3,14 @@ html {
     height: 100%;
 }
 
+.display-none {
+    display: none;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
 .grid-main {
     display: grid;
     grid-template-columns: 1fr;

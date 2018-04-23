@@ -6,7 +6,11 @@
         var urlTiles = urlBase + "/GetTiles";
 
         getTiles = function (fromId, numTeils) {
-            return $.getJSON(urlTiles, { fromId: 1 });
+            return $.getJSON(
+                urlTiles, {
+                    fromId: fromId,
+                    numTeils: numTeils,
+                });
         };
 
         return {

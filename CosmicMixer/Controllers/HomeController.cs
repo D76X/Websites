@@ -49,15 +49,15 @@ namespace CosmicMixer.Controllers
 
         public IActionResult GetTiles(int fromId, int numTeils)
         {
-            if (fromId < 0) {
+            if (fromId < 0 || numTeils < 0) {
                 return Error();
             }
-            
+
             var baseUrl = "http://localhost:3000/";
             int tileId = fromId;
             var data = new List<Tile>();
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < numTeils; i++) {
 
                 data.Add(new Tile(
                     tileId,
