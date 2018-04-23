@@ -51,11 +51,15 @@ namespace CosmicMixer.Controllers
         {
             if (fromId < 0 || numTeils < 0) {
                 return Error();
-            }
+            }            
 
             var baseUrl = "http://localhost:3000/";
             int tileId = fromId;
             var data = new List<Tile>();
+
+            if (fromId > 18) {
+                return Json(data);
+            }
 
             for (int i = 0; i < numTeils; i++) {
 

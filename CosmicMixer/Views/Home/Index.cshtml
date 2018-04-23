@@ -132,8 +132,9 @@
                         .attr("data-id");
 
                     console.log(lastId);
+                    console.log(parseInt(lastId));
 
-                    getTiles(lastId, 9);
+                    getTiles(parseInt(lastId)+1, 9);
                 }
             });
         });
