@@ -1,47 +1,16 @@
 var gulp = require('gulp');
-var cache = require('gulp-cache');
-var browserSync = require('browser-sync').create();
 
-gulp.task('default', ['browser-sync'])
-
-gulp.task('browser-sync', function () {
-
-    browserSync.init({
-        proxy: "localhost:53436",
-        ui: {
-            port: 53437
-        },
-    });
-
-
-    // watch on every file in evry folder - it works but it is heavy handed
-    // gulp.watch(["./**/*.*"]).on('change', browserSync.reload);
-
-    gulp.watch(["./**/*.html", "./**/*.css", "./**/*.cshtml"])
-        .on('change', browserSync.reload);
+//https://github.com/jackfranklin/gulp-load-plugins
+//https://stackoverflow.com/questions/33388559/how-to-use-gulp-load-plugins-with-browser-sync
+var plugins = require('gulp-load-plugins')({
+    pattern: '*'
 });
 
-// non default tasks
-gulp.task('copy-node_modules-jquery', function () {
-    try {
+// https://andy-carter.com/blog/automatically-load-gulp-plugins-with-gulp-load-plugins
+// https://medium.com/@dave_lunny/task-dependencies-in-gulp-b885c1ab48f0
+gulp.task('copy-node_modules-jquery', require('./gulp/copy-node_modules-jquery')(gulp, plugins));
+gulp.task('copy-node_modules-handlebars', require('./gulp/copy-node_modules-handlebars')(gulp, plugins));
 
-        gulp.src('./node_modules/jquery/dist/jquery.min.js')
-            .pipe(gulp.dest('./wwwroot/lib/jquery'));        
-    }
-    catch (e) {
-        return -1;
-    }
-    return 0;
-});
-
-gulp.task('copy-node_modules-handlebars', function () {
-    try {
-
-        gulp.src('./node_modules/handlebars/dist/handlebars.min.js')
-            .pipe(gulp.dest('./wwwroot/lib/handlebars'));
-    }
-    catch (e) {
-        return -1;
-    }
-    return 0;
-});
+gulp.task('browser-sync', require('./gulp/browser-sync')(gulp, plugins));
+gulp.task('watch', ['browser-sync'], require('./gulp/watch')(gulp, plugins));
+gulp.task('default', ['browser-sync', 'watch'])
