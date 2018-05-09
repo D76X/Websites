@@ -7,3 +7,5 @@
 **/CosmicMixer/bin
 **/CosmicMixer/obj
 **/CosmicMixer/obj/*.cache
+**/CosmicMixer/wwwroot/lib/**/*.js
+**/CosmicMixer/wwwroot/js/templates.js
