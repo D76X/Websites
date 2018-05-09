@@ -5,7 +5,7 @@
     <header class="site-header">
         <div class="site-header-middle">
             <a href="#">
-                Cosmix Mixer!
+                Cosmix Mixer
             </a>
         </div>
     </header>
@@ -57,32 +57,15 @@
 
 </div>
 
-@section scripts {
+@section scripts {   
 
-    <script id="tile-template" type="text/x-handlebars-template">
-        <div class="teil" data-id="{{id}}">
-            <div>{{header}}</div>
-            <a href="{{urlContent}}">
-                <div class="teil-image-container">
-                    <img class="teil-image" src="{{urlImage}}" />
-                </div>
-            </a>
-            <div>
-                <h5>{{title}}</h5>
-            </div>
-            <span>Published: {{published}}, Author: <a href="{{urlAuthor}}">{{author}}</a></span>
-        </div>
-    </script>
-
+    <script src="~/js/templates.js"></script>
     <script src="~/js/home.indexPage.js"></script>
 
     <script type="text/javascript">
 
         function renderTile(context) {
-
-            var template = $("#tile-template").html();
-            var compiled = Handlebars.compile(template);
-            var rendered = compiled(context);
+            var rendered = App.templates.tile(context);
             $("#container-teils").append(rendered);
         }
 
@@ -92,7 +75,7 @@
             //    fromId = -1;
             //}
 
-            //console.log(fromId);           
+            //console.log(fromId);
 
             services.dataService
                 .getTiles(fromId, numTeils)
@@ -134,7 +117,7 @@
             }
         }
 
-        $(document).ready(function () {          
+        $(document).ready(function () {
 
             $("#btn-get-data").click(function () {
                 getTiles();

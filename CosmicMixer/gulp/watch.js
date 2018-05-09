@@ -8,7 +8,8 @@ module.exports = function (gulp, plugins) {
             "./**/*.html",
             "./**/*.css",
             "./**/*.cshtml",
-            "./**/*.hbs"])
-            .on('change', plugins.browserSync.reload);;
-    }    
+            "./**/*.hbs"],
+            ['templateshbs',
+                'browser-sync-reload']);
+    }
 };
