@@ -17,35 +17,8 @@
         </div>
 
         <section id="tiles">
-            <div id="container-teils" class="grid-teils">
-                @*<div class="teil">1</div>
-                    <div class="teil">2</div>
-                    <div class="teil">3</div>
-                    <div class="teil">4</div>
-                    <div class="teil">5</div>
-                    <div class="teil">6</div>
-                    <div class="teil">7</div>
-                    <div class="teil">8</div>
-                    <div class="teil">
-                        9
-                        <a href="#">
-                            <div class="teil-image-container">
-                                <img class="teil-image" src="~/images/tile_placeholder_red_300x150.svg" />
-                            </div>
-                        </a>
-                        <div>
-                            <h5>Article title</h5>
-                        </div>
-                        <span>Published: , Author <a href="#/me">ME</a></span>
-                    </div>*@
-            </div>
+            <div id="container-teils" class="grid-teils"></div>
         </section>
-
-        @*<button id="btn-get-data" type="button">Get Data</button>
-            <div>
-                <input id="checkbox-get-error" type="checkbox" />
-                <label for="checkbox-get-error">Error?</label>
-            </div>*@
 
     </div>
 
@@ -57,7 +30,7 @@
 
 </div>
 
-@section scripts {   
+@section scripts {
 
     <script src="~/js/templates.js"></script>
     <script src="~/js/home.indexPage.js"></script>
@@ -67,23 +40,27 @@
         function renderTile(context) {
             var rendered = App.templates.tile(context);
             $("#container-teils").append(rendered);
-        }
+        }       
 
         function getTiles(fromId, numTeils) {
 
-            //if ($("#checkbox-get-error").is(":checked")) {
-            //    fromId = -1;
-            //}
+            var getTiles = services.dataService.getTiles(fromId, numTeils);
 
-            //console.log(fromId);
+            setTimeout(function () {
+                getTiles.abort();
+                $(window)
+                    .off("scroll.index.getTiles", ajaxScroll)
+                    .on("scroll.index.getTiles", ajaxScroll);
+            }, 5000);
 
-            services.dataService
-                .getTiles(fromId, numTeils)
-                .then(
+            getTiles.then(
                 function (tiles) {
                     $.each(tiles, function (i, tile) {
                         console.log(JSON.stringify(tile));
                         renderTile(tile);
+                        $(window)
+                            .off("scroll.index.getTiles", ajaxScroll)
+                            .on("scroll.index.getTiles", ajaxScroll);
                     })
                 },
                 function (jqXHR, textStatus, err) {
@@ -92,60 +69,30 @@
                     alert(JSON.stringify(jqXHR));
                 })
                 .always(function () {
-                    console.log("always");
-                    $(window).on("scroll", ajaxScroll);
+                    // clean up!
                 });
         };
 
-        function ajaxScroll() {
-
-            //$(window).off("scroll");
+        function ajaxScroll(event) {
             let $wnd = $(window);
             let $doc = $(document);
             let $containerTeils = $("#container-teils");
 
             if ($wnd.scrollTop() >= $doc.height() - $wnd.height() - 10) {
 
+                $(window).off("scroll.getTiles", ajaxScroll);
+
                 var lastId = $containerTeils
                     .find("div.teil:last-child")
                     .attr("data-id");
-
-                console.log(lastId);
-                console.log(parseInt(lastId));
-
                 getTiles(parseInt(lastId) + 1, 9);
             }
         }
 
         $(document).ready(function () {
-
-            $("#btn-get-data").click(function () {
-                getTiles();
-            })
-
-            getTiles(1, 9)
-
-            //$(window).scroll(function () {
-
-            //    let wnd = $(window);
-            //    let doc = $(document);
-
-            //    if (wnd.scrollTop() >= doc.height() - wnd.height() - 10) {
-
-            //        var lastId = $containerTeils
-            //            .find("div.teil:last-child")
-            //            .attr("data-id");
-
-            //        console.log(lastId);
-            //        console.log(parseInt(lastId));
-
-            //        getTiles(parseInt(lastId) + 1, 9);
-            //    }
-            //});
-
-            $(window).on("scroll", ajaxScroll);
+            getTiles(1, 9);
+            $(window).on("scroll.index.getTiles", ajaxScroll);
         });
 
     </script>
-
 }
