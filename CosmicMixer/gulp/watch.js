@@ -4,9 +4,10 @@ module.exports = function (gulp, plugins) {
 
     return function () {
 
-        gulp.watch([
+        gulp.watch([            
             "./**/*.html",
             "./**/*.css",
+            "./**/*.cs",
             "./**/*.cshtml",
             "./**/*.hbs"],
             ['templateshbs',
