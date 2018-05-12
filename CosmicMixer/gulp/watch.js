@@ -2,15 +2,15 @@
 
 module.exports = function (gulp, plugins) {
 
-    return function () {
+    return function () {        
 
-        gulp.watch([            
-            "./**/*.html",
-            "./**/*.css",
-            "./**/*.cs",
-            "./**/*.cshtml",
-            "./**/*.hbs"],
+        gulp.watch([
+            "./wwwroot/css/*.css",
+            "./wwwroot/js/*.js",         
+            "./Controllers/*.cs",
+            "./Views/**/*.cshtml",
+            "./templateshbs/*.hbs"],
             ['templateshbs',
-                'browser-sync-reload']);
+             'browser-sync-reload']);
     }
 };
