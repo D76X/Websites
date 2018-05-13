@@ -8,6 +8,7 @@ var plugins = require('gulp-load-plugins')({
 
 // https://andy-carter.com/blog/automatically-load-gulp-plugins-with-gulp-load-plugins
 // https://medium.com/@dave_lunny/task-dependencies-in-gulp-b885c1ab48f0
+gulp.task('copy-node_modules-requirejs', require('./gulp/copy-node_modules-requirejs')(gulp, plugins));
 gulp.task('copy-node_modules-jquery', require('./gulp/copy-node_modules-jquery')(gulp, plugins));
 gulp.task('copy-node_modules-handlebars', require('./gulp/copy-node_modules-handlebars')(gulp, plugins));
 gulp.task('copy-node_modules-handlebars-runtime', require('./gulp/copy-node_modules-handlebars-runtime')(gulp, plugins));
