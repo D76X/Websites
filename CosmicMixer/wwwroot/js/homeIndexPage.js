@@ -1,12 +1,13 @@
-﻿(function (homeIndex, $, undefined) {
+﻿require(['jquery', 'Handlebars', 'hbstemplates', 'dataService'], function ($, Handlebars, hbstemplates, dataService) {
 
     function renderTile(context) {
-        var rendered = App.templates.tile(context);
+        var rendered = Hbs.templates.tile(context);
         $("#container-teils").append(rendered);
     }
 
     function getTiles(fromId, numTeils) {
-        var getTiles = services.dataService.getTiles(fromId, numTeils);
+
+        var getTiles = dataService.getTiles(fromId, numTeils);
 
         setTimeout(function () {
             getTiles.abort();
@@ -54,9 +55,4 @@
         getTiles(1, 9);
         $(window).on("scroll.index.getTiles", ajaxScroll);
     });
-
-    return {
-        renderTile: renderTile
-    };
-
-})(window.homeIndex = window.homeIndex || {}, jQuery);
+});
