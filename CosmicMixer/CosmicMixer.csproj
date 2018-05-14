@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="build\" />
     <Folder Include="wwwroot\libs\" />
   </ItemGroup>
 
