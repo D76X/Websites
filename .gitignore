@@ -9,3 +9,4 @@
 **/CosmicMixer/obj/*.cache
 **/CosmicMixer/wwwroot/libs/*.js
 **/CosmicMixer/wwwroot/js/templates.js
+/node_modules
