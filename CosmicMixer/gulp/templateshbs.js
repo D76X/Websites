@@ -30,14 +30,14 @@ module.exports = function (gulp, plugins) {
             .pipe(plugins.wrap('Handlebars.template(<%= contents %>)'))
             // declare a namespace for the precompiled templates
             .pipe(plugins.declare({
-                namespace: 'App.templates',
+                namespace: 'Hbs.templates',
                 noRedeclare: true,
             }));
 
         // merge the streams
         // https://blog.mariusschulz.com/2015/05/02/merging-two-gulp-streams
         return plugins.mergeStream(partials, templates)
-            .pipe(plugins.concat('templates.js'))
+            .pipe(plugins.concat('templates.js'))            
             .pipe(gulp.dest('./wwwroot/js/'))
     }
 };
