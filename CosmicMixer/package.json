@@ -10,12 +10,13 @@
   "license": "ISC",
   "description": "Cosmix Mixer is a shared knowledge site.",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
     "gulp-cache": "^1.0.2",
-    "gulp-handlebars": "^5.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-declare": "^0.3.0",
+    "gulp-define-module": "^0.1.5",
+    "gulp-handlebars": "^5.0.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-wrap": "^0.13.0",
     "merge-stream": "^1.0.1"
