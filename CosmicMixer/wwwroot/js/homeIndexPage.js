@@ -1,5 +1,7 @@
 ﻿require(['jquery', 'Handlebars', 'hbstemplates', 'dataService'], function ($, Handlebars, hbstemplates, dataService) {
 
+    "use strict";
+
     function renderTile(context) {
         var rendered = Hbs.templates.tile(context);
         $("#container-teils").append(rendered);
