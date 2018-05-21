@@ -1,9 +1,14 @@
 ﻿define(['jquery'], function ($) {
 
+    "use strict";
+
     function DataService() {
 
-        var urlBase = "http://localhost:3000/Home";
-        var urlTiles = urlBase + "/GetTiles";
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname.split('/')[1] + '/';
+        var urlTiles = baseUrl + "Home/GetTiles";
+
+        console.log(urlTiles);
 
         this.getTiles = function (fromId, numTeils) {
             return $.getJSON(
