@@ -1,6 +1,7 @@
-﻿define(['jquery'], function ($) {
+define('dataService',['jquery'], function ($) {
 
     "use strict";
+    //ops();
 
     function DataService() {
 
@@ -18,4 +19,3 @@
 
     return new DataService();
 });
-

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using CosmicMixer.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using CosmicMixer.Models;
 
-namespace CosmicMixer.Controllers
-{
+namespace CosmicMixer.Controllers {
     public class Tile
     {
         public int Id { get; private set; }
@@ -49,17 +46,22 @@ namespace CosmicMixer.Controllers
 
         public IActionResult GetTiles(int fromId, int numTeils)
         {
+
+            //return Error();
+
             if (fromId < 0 || numTeils < 0) {
                 return Error();
-            }            
+            }
 
-            var baseUrl = "http://localhost:3000/";
+            //var baseUrl = "http://localhost:3000/";
+            //var baseUrl = "http://localhost:53436/";
+            var baseUrl = "http://localhost:53435/";
             int tileId = fromId;
             var data = new List<Tile>();
 
-            if (fromId > 18) {
-                return Json(data);
-            }
+            //if (fromId > 18) {
+            //    return Json(data);
+            //}
 
             for (int i = 0; i < numTeils; i++) {
 

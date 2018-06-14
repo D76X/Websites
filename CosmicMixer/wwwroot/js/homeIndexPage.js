@@ -1,4 +1,4 @@
-﻿require(['jquery', 'Handlebars', 'hbstemplates', 'dataService'], function ($, Handlebars, hbstemplates, dataService) {
+require(['jquery', 'Handlebars', 'hbstemplates', 'dataService'], function ($, Handlebars, hbstemplates, dataService) {
 
     "use strict";
 

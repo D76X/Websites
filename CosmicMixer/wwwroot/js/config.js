@@ -1,4 +1,4 @@
-﻿define([], function () {
+define('config',[], function () {
 
     "use strict";
 

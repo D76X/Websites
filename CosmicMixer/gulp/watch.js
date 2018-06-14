@@ -2,15 +2,16 @@
 
 module.exports = function (gulp, plugins) {
 
-    return function () {        
+    return function () {
 
         gulp.watch([
             "./wwwroot/css/*.css",
-            "./wwwroot/js/*.js",         
+            "./wwwroot/js/*.js",
             "./Controllers/*.cs",
             "./Views/**/*.cshtml",
             "./templateshbs/*.hbs"],
             ['templateshbs',
-             'browser-sync-reload']);
+                'minify-js',
+                'browser-sync-reload']);
     }
 };

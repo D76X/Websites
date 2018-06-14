@@ -53,6 +53,12 @@ namespace CosmicMixer {
             app.UseAuthentication();
 
             app.UseMvc(routes => {
+
+                routes.MapRoute(
+                    name: "content",
+                    template: "content/{id}",
+                    defaults: new { controller = "Content", action = "Article" });
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

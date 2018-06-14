@@ -13,6 +13,9 @@ gulp.task('copy-node_modules-jquery', require('./gulp/copy-node_modules-jquery')
 gulp.task('copy-node_modules-handlebars', require('./gulp/copy-node_modules-handlebars')(gulp, plugins));
 gulp.task('copy-node_modules-handlebars-runtime', require('./gulp/copy-node_modules-handlebars-runtime')(gulp, plugins));
 
+// bundling and minification
+gulp.task('minify-js', require('./gulp/minify-js')(gulp, plugins));
+
 gulp.task('browser-sync', ['templateshbs'], require('./gulp/browser-sync')(gulp, plugins));
 gulp.task('browser-sync-reload', require('./gulp/browser-sync-reload')(gulp, plugins));
 gulp.task('watch', ['browser-sync'], require('./gulp/watch')(gulp, plugins));

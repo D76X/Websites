@@ -17,29 +17,37 @@
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/jquery.min.js"></script>
-        <script src="~/lib/handlebars/handlebars.runtime.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="~/js/dataService.js"></script>
+
+        <script src="~/libs/handlebars.runtime.min.js"></script>
+        <script src="~/libs/require-2.3.5-min.js"></script>
+            <script>
+                require(['js/requirejs.config']);
+            </script>
+
     </environment>
 
     <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
+                asp-fallback-test="window.require"
+                integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
+                crossorigin="anonymous">
+        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js" 
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"
                 asp-fallback-src="~/lib/handlebars/handlebars.runtime.min.js"
                 asp-fallback-test="window.Handlebars"
                 crossorigin="anonymous"
                 integrity="sha256-UoS1yAHj9HqfbFL+oYoF0gkPrJiMK9t4zeciRCafl8I=">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.optimized.min.js" asp-append-version="true"></script>
     </environment>
 
-    @RenderSection("Scripts", required: false)
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>

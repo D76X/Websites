@@ -37,7 +37,7 @@ module.exports = function (gulp, plugins) {
         // merge the streams
         // https://blog.mariusschulz.com/2015/05/02/merging-two-gulp-streams
         return plugins.mergeStream(partials, templates)
-            .pipe(plugins.concat('templates.js'))            
-            .pipe(gulp.dest('./wwwroot/js/'))
+            .pipe(plugins.concat('templates.js'))
+            .pipe(gulp.dest('./wwwroot/js/'));
     }
 };

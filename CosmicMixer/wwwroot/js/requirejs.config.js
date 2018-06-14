@@ -1,4 +1,4 @@
-﻿require.config({
+require.config({
     baseUrl: './', // the wwwroot
     paths: {
         // the left side is the module ID,
