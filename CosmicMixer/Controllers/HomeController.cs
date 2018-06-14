@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace CosmicMixer.Controllers {
-    public class Tile
-    {
+
+    public class Tile {
         public int Id { get; private set; }
         public string Header { get; private set; }
         public string Title { get; private set; }
@@ -18,14 +18,13 @@ namespace CosmicMixer.Controllers {
 
         public Tile(
             int id,
-            string header,             
-            string title, 
-            string urlImage, 
-            string urlContent, 
+            string header,
+            string title,
+            string urlImage,
+            string urlContent,
             string author,
             string urlAuthor,
-            string publisged)
-        {            
+            string publisged) {
             this.Id = id;
             this.Header = header;
             this.Title = title;
@@ -37,15 +36,13 @@ namespace CosmicMixer.Controllers {
         }
     }
 
-    public class HomeController : Controller
-    {
-        public IActionResult Index()
-        {
+    public class HomeController : Controller {        
+
+        public IActionResult Index() {
             return View();
         }
 
-        public IActionResult GetTiles(int fromId, int numTeils)
-        {
+        public IActionResult GetTiles(int fromId, int numTeils) {
 
             //return Error();
 
@@ -53,9 +50,8 @@ namespace CosmicMixer.Controllers {
                 return Error();
             }
 
-            //var baseUrl = "http://localhost:3000/";
-            //var baseUrl = "http://localhost:53436/";
-            var baseUrl = "http://localhost:53435/";
+            string baseUrl = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+
             int tileId = fromId;
             var data = new List<Tile>();
 
@@ -70,8 +66,7 @@ namespace CosmicMixer.Controllers {
                     $"header{tileId}",
                     $"Title{tileId}",
                     $"/images/tile_placeholder_red_300x150.svg",
-                    //$"{baseUrl}tileimages/{tileId}",
-                    $"{baseUrl}content/{tileId}",
+                    $"{baseUrl}/content/{tileId}",
                     $"Davide Spano",
                     $"{baseUrl}authors/{tileId}",
                     DateTime.Today.Date.ToString()));
@@ -87,27 +82,23 @@ namespace CosmicMixer.Controllers {
         /// ../home/aspdotnetproject
         /// </summary>
         /// <returns></returns>
-        public IActionResult AspDotNetProject()
-        {
+        public IActionResult AspDotNetProject() {
             return View();
         }
 
-        public IActionResult About()
-        {
+        public IActionResult About() {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
-        public IActionResult Contact()
-        {
+        public IActionResult Contact() {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
 
-        public IActionResult Error()
-        {
+        public IActionResult Error() {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
