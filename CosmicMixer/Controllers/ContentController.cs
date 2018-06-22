@@ -5,22 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CosmicMixer.Controllers
-{
-    public class ContentController : Controller
-    {
+namespace CosmicMixer.Controllers {
 
-        public ContentController()
-        {
+    public class ArticleModel {
 
+        public readonly int Id;
+
+        public ArticleModel(int id) {
+            Id = id;
         }
+    }
 
+    public class ContentController : Controller {        
 
         // GET: Content
         //[Route("Content/Index")]
-        public IActionResult Article(int id)
-        {
-            return View();
+        public IActionResult Article(int id) {
+
+            var articleModel = new ArticleModel(id);
+
+            return View(articleModel);
         }
 
         //// GET: Content/Details/5
