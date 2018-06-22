@@ -47,16 +47,32 @@
     <environment include="Development">
 
         <script src="~/libs/handlebars.runtime.min.js"></script>
-        <script src="~/libs/require-2.3.5-min.js"></script>
-        
-        @{ 
-            var x = Url.Content("~/images/logos/hdr.png"); }
-
+        <script src="~/libs/require-2.3.5-min.js"></script>     
         <script>
-
-            //require(['js/requirejs.config']);              
-            require(['@Url.Content("~/js/requirejs.config")'.substr(1)]); 
-            
+            require.config({
+                baseUrl: './', // the wwwroot
+                paths: {
+                    // the left side is the module ID,
+                    // the right side is the path to
+                    // the file, relative to baseUrl.
+                    // Also, the path should NOT include
+                    // the '.js' file extension. 
+                    jquery: 'libs/jquery.min',
+                    Handlebars: 'libs/handlebars.runtime.min',
+                    hbstemplates: 'js/templates',
+                    dataService: 'js/dataService',
+                    homeIndexPage: 'js/homeIndexPage',
+                },
+                shim: {
+                    handlebars: {
+                        exports: 'Handlebars'
+                    },
+                    hbstemplates: {
+                        exports: 'Hbs',
+                        deps: ['Handlebars']
+                    }
+                }
+            });
         </script>
 
     </environment>
