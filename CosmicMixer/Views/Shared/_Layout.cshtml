@@ -12,17 +12,52 @@
     </environment>
 </head>
 <body>
+
     <div>
-        @RenderBody()
+
+        <div class="grid-main">
+
+            <header class="site-header">
+                <div class="site-header-middle">
+                    <a href="#">
+                        Cosmix Mixer
+                    </a>
+                </div>
+            </header>
+
+            <div class="grid-pagewrap">
+
+                <div id="sidebar" class="sidebar">
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                </div>
+
+                @RenderBody()
+
+            </div>
+
+            <div class="site-footers">
+                <footer class="site-footer">
+                    This is my footer!
+                </footer>
+            </div>
+
+        </div>
     </div>
 
     <environment include="Development">
 
         <script src="~/libs/handlebars.runtime.min.js"></script>
         <script src="~/libs/require-2.3.5-min.js"></script>
-            <script>
-                require(['js/requirejs.config']);
-            </script>
+        
+        @{ 
+            var x = Url.Content("~/images/logos/hdr.png"); }
+
+        <script>
+
+            //require(['js/requirejs.config']);              
+            require(['@Url.Content("~/js/requirejs.config")'.substr(1)]); 
+            
+        </script>
 
     </environment>
 
