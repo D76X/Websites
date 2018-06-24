@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cosmic Mixer</title>
     <environment include="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="~/css/main.css" />
     </environment>
     <environment exclude="Development">
@@ -26,9 +27,24 @@
             </header>
 
             <div class="grid-pagewrap">
-
                 <div id="sidebar" class="sidebar">
-                    <a href="@Url.Action("Index", "Home")">Home</a>
+                    <nav id="main-nav" class="icon-bar">
+                        <a class="active" href="@Url.Action("Index", "Home")">
+                            <i class="fa fa-home"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </nav>
                 </div>
 
                 @RenderBody()
@@ -47,7 +63,7 @@
     <environment include="Development">
 
         <script src="~/libs/handlebars.runtime.min.js"></script>
-        <script src="~/libs/require-2.3.5-min.js"></script>     
+        <script src="~/libs/require-2.3.5-min.js"></script>
         <script>
             require.config({
                 baseUrl: './', // the wwwroot
@@ -56,7 +72,57 @@
                     // the right side is the path to
                     // the file, relative to baseUrl.
                     // Also, the path should NOT include
-                    // the '.js' file extension. 
+                    // the '.js' file extension.
+                    jquery: 'libs/jquery.min',
+                    Handlebars: 'libs/handlebars.runtime.min',
+                    hbstemplates: 'js/templates',
+                    dataService: 'js/dataService',
+                    homeIndexPage: 'js/homeIndexPage',
+                },
+                shim: {
+                    handlebars: {
+                        exports: 'Handlebars'
+                    },
+                    hbstemplates: {
+                        exports: 'Hbs',
+                        deps: ['Handlebars']
+                    }
+                }
+            });
+        </script>
+        <script>
+
+        </script>
+
+    </environment>
+
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"
+                asp-fallback-src="~/lib/handlebars/handlebars.runtime.min.js"
+                asp-fallback-test="window.Handlebars"
+                crossorigin="anonymous"
+                integrity="sha256-UoS1yAHj9HqfbFL+oYoF0gkPrJiMK9t4zeciRCafl8I=">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
+                asp-fallback-test="window.require"
+                integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
+                crossorigin="anonymous">
+        </script>
+        @*<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>*@
+        <script>
+            require.config({
+                baseUrl: './', // the wwwroot
+                paths: {
+                    // the left side is the module ID,
+                    // the right side is the path to
+                    // the file, relative to baseUrl.
+                    // Also, the path should NOT include
+                    // the '.js' file extension.
                     jquery: 'libs/jquery.min',
                     Handlebars: 'libs/handlebars.runtime.min',
                     hbstemplates: 'js/templates',
@@ -75,27 +141,7 @@
             });
         </script>
 
-    </environment>
 
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
-                asp-fallback-test="window.require"
-                integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
-                crossorigin="anonymous">
-        </script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"
-                asp-fallback-src="~/lib/handlebars/handlebars.runtime.min.js"
-                asp-fallback-test="window.Handlebars"
-                crossorigin="anonymous"
-                integrity="sha256-UoS1yAHj9HqfbFL+oYoF0gkPrJiMK9t4zeciRCafl8I=">
-        </script>
-        <script src="~/js/site.optimized.min.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

@@ -45,4 +45,24 @@
 
 ---
 
+## Media Queries Boundaries
 
+1. [CSS Media Queries for Desktop, Tablet, Mobile.](https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488)
+
+---
+
+W3.CSS
+
+1. https://www.w3schools.com/w3css/default.asp
+
+---
+
+## Hamburger Menu and Icons
+
+1. [How To Create an Icon Bar](https://www.w3schools.com/howto/howto_css_icon_bar.asp#)
+2. [Pure CSS Hamburger fold-out menu](https://codepen.io/erikterwan/pen/EVzeRP)
+3. [Three Line Menu Navicon](https://css-tricks.com/three-line-menu-navicon/)
+4. [W3.CSS Icons](https://www.w3schools.com/w3css/w3css_icons.asp)
+
+
+---
