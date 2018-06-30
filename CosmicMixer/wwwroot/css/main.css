@@ -33,6 +33,7 @@ html {
     visibility: hidden;
 }
 
+
 .grid-main {
     display: grid;
     grid-template-columns: 1fr;
@@ -42,16 +43,30 @@ html {
 }
 
 .site-header {
+    display: grid;
     grid-area: toprow;
+    border: 1px solid;
     height: 130px;
-    /*border: 1px solid;*/
-    font-size: 40px;
+    grid-template-columns: 100px auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "headerleft headercenter headerright";
 }
 
-    .site-header .logo {
-        height: 600px;
-        width:450px;
+.hamburger {
+    margin: 40px 0 0 15px;
+    grid-area: headerleft;    
+}
+
+    div .hamburger .line {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
     }
+
+.banner {
+    grid-area: headercenter;    
+}   
 
 .grid-pagewrap {
     grid-area: middlerow;
@@ -80,7 +95,7 @@ html {
 }
 
     #sidebar.stick-top {
-        top: 0%;        
+        top: 0%;
     }
 
 .sidebar {
