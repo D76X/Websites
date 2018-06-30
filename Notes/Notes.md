@@ -184,6 +184,32 @@ https://www.asp.net/ajax/cdn?WT.mc_id=12833-DEV-sitepoint-othercontent#ajaxmicro
 
 ---
 
+### RequireJS
+
+Set up the baseUrl to point to wwwroot.
+
+1. [RequireJS - what should I set for the BaseUrl?](https://stackoverflow.com/questions/27869873/requirejs-what-should-i-set-for-the-baseurl)  
+2. [ASP.NET MVC 6 application's virtual application root path](https://stackoverflow.com/questions/35082888/asp-net-mvc-6-applications-virtual-application-root-path)  
+
+Use libraries from CDNs with RequireJS 
+
+1. [require js loading scripts from cdn fail](https://stackoverflow.com/questions/14751996/require-js-loading-scripts-from-cdn-fail)  
+2. [Require JS, Loading Libraries through CDN fails](https://stackoverflow.com/questions/32986660/require-js-loading-libraries-through-cdn-fails)  
+3. [Loading Bootstrap from CDN with Require.js](https://stackoverflow.com/questions/13464846/loading-bootstrap-from-cdn-with-require-js)  
+
+### RequireJS Optimizer
+
+1. [Using jquery UI with require.js and CDN](https://stackoverflow.com/questions/14203974/using-jquery-ui-with-require-js-and-cdn)  
+
+---
+
+### CDNs
+
+1. [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
+2. [Cloudfare](https://cdnjs.cloudflare.com)
+
+---
+
 ### Add comments to articles
 
 ### Host on 

@@ -64,5 +64,20 @@ W3.CSS
 3. [Three Line Menu Navicon](https://css-tricks.com/three-line-menu-navicon/)
 4. [W3.CSS Icons](https://www.w3schools.com/w3css/w3css_icons.asp)
 
+---
 
+## SVGs
+
+1. [How to Scale SVG](https://css-tricks.com/scale-svg/)
+2. [Using SVG](https://css-tricks.com/using-svg/)
+3. [Creating Non-Rectangular Headers](https://css-tricks.com/creating-non-rectangular-headers/)
+4. [Scaling of SVG backgrounds](https://developer.mozilla.org/en-US/docs/Web/CSS/Scaling_of_SVG_backgrounds)
+5. 
+
+---
+
+## Verical Bar
+
+1. [How To Create a Fixed Social Bar](https://www.w3schools.com/howto/howto_css_sticky_social_bar.asp)
+2. [CSS Navigation Bar](https://www.w3schools.com/css/css_navbar.asp)
 ---
