@@ -1,4 +1,4 @@
-require(['jquery'], function ($) {
+require(['jquery', 'jqueryui'], function ($) {
 
     "use strict";  
 
@@ -10,13 +10,10 @@ require(['jquery'], function ($) {
 
         if ($wnd.scrollTop() > 20) {
             console.log('>120');
-            //$("#sidebar").animate({ top: '0' }, 100);
-            //$("#sidebar").toggleClass()
-            $("#sidebar").addClass("stick-top");
+            $("#sidebar").addClass("stick-top", 1000);
         }
         else {
-            //$("#sidebar").css({ 'top': '' });
-            $("#sidebar").removeClass("stick-top");
+            $("#sidebar").removeClass("stick-top", 500);
         }             
     }  
 
