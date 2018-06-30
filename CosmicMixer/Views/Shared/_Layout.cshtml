@@ -17,13 +17,10 @@
     <div>
 
         <div class="grid-main">
-
             <header class="site-header">
-                <div class="site-header-middle">
-                    <a href="#">
-                        Cosmix Mixer
-                    </a>
-                </div>
+                <a href="/">
+                    <img src="~/images/banner.svg" class="logo" />
+                </a>
             </header>
 
             <div class="grid-pagewrap">
@@ -60,88 +57,48 @@
         </div>
     </div>
 
+    <script src="~/libs/handlebars.runtime.min.js"></script>
+    <script src="~/libs/require-2.3.5-min.js"></script>
+    <script>
+            require.config({
+                //baseUrl: './', // the wwwroot
+                baseUrl: '@Url.Content("~/")', // the wwwroot
+                paths: {
+                    // the left side is the module ID,
+                    // the right side is the path to
+                    // the file, relative to baseUrl.
+                    // Also, the path should NOT include
+                    // the '.js' file extension.
+                    jquery: 'libs/jquery-3.3.1.min',
+                    jqueryui: 'libs/jqueryui-1.9.2-min',
+                    Handlebars: 'libs/handlebars.runtime-4.0.11.min',
+                    hbstemplates: 'js/templates',
+                    layout: 'js/layout',
+                    dataService: 'js/dataService',
+                    homeIndexPage: 'js/homeIndexPage',
+                },
+                shim: {
+                    jqueryui: {
+                        deps: ['jquery']
+                    },
+                    handlebars: {
+                        exports: 'Handlebars'
+                    },
+                    hbstemplates: {
+                        exports: 'Hbs',
+                        deps: ['Handlebars']
+                    }
+                }
+            });
+    </script>
+
+    <script>
+        require(["js/layout"]);
+    </script>
+
     <environment include="Development">
-
-        <script src="~/libs/handlebars.runtime.min.js"></script>
-        <script src="~/libs/require-2.3.5-min.js"></script>
-        <script>
-            require.config({
-                baseUrl: './', // the wwwroot
-                paths: {
-                    // the left side is the module ID,
-                    // the right side is the path to
-                    // the file, relative to baseUrl.
-                    // Also, the path should NOT include
-                    // the '.js' file extension.
-                    jquery: 'libs/jquery.min',
-                    Handlebars: 'libs/handlebars.runtime.min',
-                    hbstemplates: 'js/templates',
-                    dataService: 'js/dataService',
-                    homeIndexPage: 'js/homeIndexPage',
-                },
-                shim: {
-                    handlebars: {
-                        exports: 'Handlebars'
-                    },
-                    hbstemplates: {
-                        exports: 'Hbs',
-                        deps: ['Handlebars']
-                    }
-                }
-            });
-        </script>
-        <script>
-
-        </script>
-
     </environment>
-
     <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"
-                asp-fallback-src="~/lib/handlebars/handlebars.runtime.min.js"
-                asp-fallback-test="window.Handlebars"
-                crossorigin="anonymous"
-                integrity="sha256-UoS1yAHj9HqfbFL+oYoF0gkPrJiMK9t4zeciRCafl8I=">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"
-                asp-fallback-test="window.require"
-                integrity="sha256-0SGl1PJNDyJwcV5T+weg2zpEMrh7xvlwO4oXgvZCeZk="
-                crossorigin="anonymous">
-        </script>
-        @*<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-            </script>*@
-        <script>
-            require.config({
-                baseUrl: './', // the wwwroot
-                paths: {
-                    // the left side is the module ID,
-                    // the right side is the path to
-                    // the file, relative to baseUrl.
-                    // Also, the path should NOT include
-                    // the '.js' file extension.
-                    jquery: 'libs/jquery.min',
-                    Handlebars: 'libs/handlebars.runtime.min',
-                    hbstemplates: 'js/templates',
-                    dataService: 'js/dataService',
-                    homeIndexPage: 'js/homeIndexPage',
-                },
-                shim: {
-                    handlebars: {
-                        exports: 'Handlebars'
-                    },
-                    hbstemplates: {
-                        exports: 'Hbs',
-                        deps: ['Handlebars']
-                    }
-                }
-            });
-        </script>
-
-
     </environment>
 
     @RenderSection("scripts", required: false)
