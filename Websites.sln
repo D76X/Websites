@@ -14,6 +14,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{DC8956D8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{A20D9D3F-8B50-4185-AF98-D7FE1E15833B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionAssets", "SolutionAssets", "{BE5557D7-B686-45E5-90C8-4A9DFF10A901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{CECF027D-CD0E-499B-A193-078F5C4869ED}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionAssets\Images\TheCosmicMixerBanner.svg = SolutionAssets\Images\TheCosmicMixerBanner.svg
+		SolutionAssets\Images\TheSun.png = SolutionAssets\Images\TheSun.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "favicons", "favicons", "{A01F30FF-0DE4-491F-95EA-7A272469B714}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionAssets\favicons\android-icon-144x144.png = SolutionAssets\favicons\android-icon-144x144.png
+		SolutionAssets\favicons\android-icon-192x192.png = SolutionAssets\favicons\android-icon-192x192.png
+		SolutionAssets\favicons\android-icon-36x36.png = SolutionAssets\favicons\android-icon-36x36.png
+		SolutionAssets\favicons\android-icon-48x48.png = SolutionAssets\favicons\android-icon-48x48.png
+		SolutionAssets\favicons\android-icon-72x72.png = SolutionAssets\favicons\android-icon-72x72.png
+		SolutionAssets\favicons\android-icon-96x96.png = SolutionAssets\favicons\android-icon-96x96.png
+		SolutionAssets\favicons\apple-icon-114x114.png = SolutionAssets\favicons\apple-icon-114x114.png
+		SolutionAssets\favicons\apple-icon-120x120.png = SolutionAssets\favicons\apple-icon-120x120.png
+		SolutionAssets\favicons\apple-icon-144x144.png = SolutionAssets\favicons\apple-icon-144x144.png
+		SolutionAssets\favicons\apple-icon-152x152.png = SolutionAssets\favicons\apple-icon-152x152.png
+		SolutionAssets\favicons\apple-icon-180x180.png = SolutionAssets\favicons\apple-icon-180x180.png
+		SolutionAssets\favicons\apple-icon-57x57.png = SolutionAssets\favicons\apple-icon-57x57.png
+		SolutionAssets\favicons\apple-icon-60x60.png = SolutionAssets\favicons\apple-icon-60x60.png
+		SolutionAssets\favicons\apple-icon-72x72.png = SolutionAssets\favicons\apple-icon-72x72.png
+		SolutionAssets\favicons\apple-icon-76x76.png = SolutionAssets\favicons\apple-icon-76x76.png
+		SolutionAssets\favicons\apple-icon-precomposed.png = SolutionAssets\favicons\apple-icon-precomposed.png
+		SolutionAssets\favicons\apple-icon.png = SolutionAssets\favicons\apple-icon.png
+		SolutionAssets\favicons\browserconfig.xml = SolutionAssets\favicons\browserconfig.xml
+		SolutionAssets\favicons\favicon-16x16.png = SolutionAssets\favicons\favicon-16x16.png
+		SolutionAssets\favicons\favicon-32x32.png = SolutionAssets\favicons\favicon-32x32.png
+		SolutionAssets\favicons\favicon-96x96.png = SolutionAssets\favicons\favicon-96x96.png
+		SolutionAssets\favicons\favicon.ico = SolutionAssets\favicons\favicon.ico
+		SolutionAssets\favicons\manifest.json = SolutionAssets\favicons\manifest.json
+		SolutionAssets\favicons\ms-icon-144x144.png = SolutionAssets\favicons\ms-icon-144x144.png
+		SolutionAssets\favicons\ms-icon-150x150.png = SolutionAssets\favicons\ms-icon-150x150.png
+		SolutionAssets\favicons\ms-icon-310x310.png = SolutionAssets\favicons\ms-icon-310x310.png
+		SolutionAssets\favicons\ms-icon-70x70.png = SolutionAssets\favicons\ms-icon-70x70.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +66,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CECF027D-CD0E-499B-A193-078F5C4869ED} = {BE5557D7-B686-45E5-90C8-4A9DFF10A901}
+		{A01F30FF-0DE4-491F-95EA-7A272469B714} = {BE5557D7-B686-45E5-90C8-4A9DFF10A901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07116282-A52E-40A7-AAB5-6B6C83827413}

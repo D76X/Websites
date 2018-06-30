@@ -210,6 +210,12 @@ Use libraries from CDNs with RequireJS
 
 ---
 
+### Favicon
+
+1. [How do I force a favicon refresh](https://stackoverflow.com/questions/2208933/how-do-i-force-a-favicon-refresh)
+
+---
+
 ### Add comments to articles
 
 ### Host on 
