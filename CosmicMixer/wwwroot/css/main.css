@@ -74,16 +74,14 @@ html {
     font-size: 40px;
 }
 
-.stick-top {
-    top: 0%;   
-}
-
 #sidebar {
     grid-area: sidebar;
     position: fixed;
-    /*transition: top 5s;*/
-    
 }
+
+    #sidebar.stick-top {
+        top: 0%;        
+    }
 
 .sidebar {
     height: 100%;
