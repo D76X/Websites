@@ -21,9 +21,9 @@ html {
             background-color: #000;
         }
 
-.active {
-    background-color: red !important;
-}
+        .icon-bar a.active {
+            background-color: red !important;
+        }
 
 .display-none {
     display: none;
