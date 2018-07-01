@@ -154,6 +154,7 @@ section#tiles {
         grid-template-areas: "tiles";
         grid-column-gap: 1em;
         margin-top: 130px;
+        z-index: 0;
     }
 
     section#tiles .grid-teils {
