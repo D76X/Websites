@@ -18,6 +18,8 @@ require(['jquery', 'jqueryui'], function ($) {
     function setActiveIcon(event) {
         $(this).siblings(".active").removeClass("active");
         $(this).addClass("active");
+        event.preventDefault();
+        event.stopPropagation();
     }
 
     $(document).ready(function () {
