@@ -47,26 +47,27 @@ html {
     grid-area: toprow;
     border: 1px solid;
     height: 130px;
-    grid-template-columns: 100px auto auto;
+    grid-template-columns: auto auto;
     grid-template-rows: auto;
-    grid-template-areas: "headerleft headercenter headerright";
+    grid-template-areas: "headercenter headerright";
 }
 
-.hamburger {
+#hamburger {
     margin: 40px 0 0 15px;
-    grid-area: headerleft;    
+    grid-area: headerleft;
+    display: none;
 }
 
-    div .hamburger .line {
-        width: 35px;
-        height: 5px;
-        background-color: black;
-        margin: 6px 0;
-    }
+div #hamburger .line {
+    width: 60px;
+    height: 10px;
+    background-color: firebrick;
+    margin: 6px 0;
+}
 
 .banner {
-    grid-area: headercenter;    
-}   
+    grid-area: headercenter;
+}
 
 .grid-pagewrap {
     grid-area: middlerow;
@@ -159,6 +160,20 @@ section#tiles {
         grid-auto-rows: minmax(10em, auto);
         grid-column-gap: 1em;
         grid-row-gap: 2em;
+    }
+
+    .site-header {
+        display: grid;
+        grid-area: toprow;
+        border: 1px solid;
+        height: 130px;
+        grid-template-columns: 100px auto auto;
+        grid-template-rows: auto;
+        grid-template-areas: "headerleft headercenter headerright";
+    }
+
+    #hamburger {
+        display: initial;
     }
 }
 
