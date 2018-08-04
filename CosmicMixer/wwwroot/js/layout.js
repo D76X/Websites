@@ -24,6 +24,6 @@ require(['jquery', 'jqueryui'], function ($) {
 
     $(document).ready(function () {
         $(window).on("scroll.layout.animateSidebar", animateSidebar);
-        $("#main-nav").on("click.layout.setActiveIcon", "a", setActiveIcon);
+        $("#main-nav, #horizontal-main-nav").on("click.layout.setActiveIcon", "a", setActiveIcon);
     });
 });
