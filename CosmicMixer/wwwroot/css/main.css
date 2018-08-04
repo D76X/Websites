@@ -141,10 +141,19 @@ section#tiles {
         margin: 0;
     }
 
+#horizontalbar{
+    /*display: none;*/
+    visibility: hidden;
+}
+
 @media screen and (max-width: 60em) {
 
-    #sidebar {
-        display: none;
+    .grid-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "toprow" "horizontalnavbar" "middlerow" "bottomrow";
+        grid-row-gap: 1em;
     }
 
     .grid-pagewrap {
@@ -164,23 +173,59 @@ section#tiles {
         grid-auto-rows: minmax(10em, auto);
         grid-column-gap: 1em;
         grid-row-gap: 2em;
+        margin-top:3em;
     }
 
     .site-header {
         display: grid;
         grid-area: toprow;
-        /*border: 1px solid;*/
-        height: 130px;
+        height: 140px;
         grid-template-columns: 100px auto 1000px;
-        grid-template-rows: auto;
+        grid-template-rows: 130px;
         grid-template-areas: "headerleft headercenter headerright";
-        position: fixed;        
+        position: fixed;
         z-index: 0;
     }
+
+    #sidebar {
+        display: none;
+    }    
 
     #hamburger {
         display: initial;        
     }
+
+    #horizontalbar {
+        display: grid;
+        grid-area: horizontalnavbar;
+        visibility: visible;
+        position: fixed;
+        width: 97.8%;
+        margin-top: 8em;
+    }
+
+    .h-icon-bar {
+        background-color: orange;
+        overflow: auto;
+    }
+
+        .h-icon-bar a {
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 36px;
+        }
+
+            .h-icon-bar a:hover {
+                background-color: #000;
+            }
+
+            .h-icon-bar a.active {
+                background-color: red !important;
+            }
 }
 
 @media screen and (max-width: 40em) {

@@ -64,6 +64,8 @@ W3.CSS
 3. [Three Line Menu Navicon](https://css-tricks.com/three-line-menu-navicon/)
 4. [W3.CSS Icons](https://www.w3schools.com/w3css/w3css_icons.asp)
 
+https://www.internetkultur.at/simple-hamburger-drop-down-menu-with-css-and-jquery/
+
 ---
 
 ## SVGs
@@ -74,6 +76,7 @@ W3.CSS
 4. [Scaling of SVG backgrounds](https://developer.mozilla.org/en-US/docs/Web/CSS/Scaling_of_SVG_backgrounds)
 5. [How To Use SVG Files On Your Website (For Beginners)](https://www.youtube.com/watch?v=lVuDLI9euI8)  
 6. [How can I make an svg scale with its parent container?](https://stackoverflow.com/questions/19484707/how-can-i-make-an-svg-scale-with-its-parent-container)
+7. [svg viewBox attribute](https://stackoverflow.com/questions/15335926/svg-viewbox-attribute)  
 ---
 
 ## Verical Bar
