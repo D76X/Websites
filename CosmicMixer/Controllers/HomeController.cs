@@ -1,42 +1,20 @@
-﻿using CosmicMixer.Models;
+﻿using CosmicMixer.Entities;
+using CosmicMixer.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CosmicMixer.Controllers {
+namespace CosmicMixer.Controllers {    
 
-    public class Tile {
-        public int Id { get; private set; }
-        public string Header { get; private set; }
-        public string Title { get; private set; }
-        public string UrlImage { get; private set; }
-        public string UrlContent { get; private set; }
-        public string Author { get; private set; }
-        public string UrlAuthor { get; private set; }
-        public string Published { get; private set; }
+    public class HomeController : Controller {
 
-        public Tile(
-            int id,
-            string header,
-            string title,
-            string urlImage,
-            string urlContent,
-            string author,
-            string urlAuthor,
-            string publisged) {
-            this.Id = id;
-            this.Header = header;
-            this.Title = title;
-            this.UrlImage = urlImage;
-            this.UrlContent = urlContent;
-            this.Author = author;
-            this.UrlAuthor = urlAuthor;
-            this.Published = publisged;
+        readonly SiteDbContext siteDbContext;
+
+        public HomeController(SiteDbContext siteDbContext) {
+
+            this.siteDbContext = siteDbContext;
         }
-    }
-
-    public class HomeController : Controller {        
 
         public IActionResult Index() {
             return View();
@@ -44,38 +22,43 @@ namespace CosmicMixer.Controllers {
 
         public IActionResult GetTiles(int fromId, int numTeils) {
 
-            //return Error();
-
-            if (fromId < 0 || numTeils < 0) {
-                return Error();
-            }
-
-            string baseUrl = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
-
-            int tileId = fromId;
-            var data = new List<Tile>();
-
-            //if (fromId > 18) {
-            //    return Json(data);
-            //}
-
-            for (int i = 0; i < numTeils; i++) {
-
-                data.Add(new Tile(
-                    tileId,
-                    $"header{tileId}",
-                    $"Title{tileId}",
-                    $"/images/tile_placeholder_red_300x150.svg",
-                    $"{baseUrl}/content/{tileId}",
-                    $"Davide Spano",
-                    $"{baseUrl}authors/{tileId}",
-                    DateTime.Today.Date.ToString()));
-
-                ++tileId;
-            }
-
-            return Json(data);
+            return Error();            
         }
+
+        //public IActionResult GetTiles(int fromId, int numTeils) {
+
+        //    //return Error();
+
+        //    if (fromId < 0 || numTeils < 0) {
+        //        return Error();
+        //    }
+
+        //    string baseUrl = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+
+        //    int tileId = fromId;
+        //    var data = new List<Tile>();
+
+        //    //if (fromId > 18) {
+        //    //    return Json(data);
+        //    //}
+
+        //    for (int i = 0; i < numTeils; i++) {
+
+        //        data.Add(new Tile(
+        //            tileId,
+        //            $"header{tileId}",
+        //            $"Title{tileId}",
+        //            $"/images/tile_placeholder_red_300x150.svg",
+        //            $"{baseUrl}/content/{tileId}",
+        //            $"Davide Spano",
+        //            $"{baseUrl}authors/{tileId}",
+        //            DateTime.Today.Date.ToString()));
+
+        //        ++tileId;
+        //    }
+
+        //    return Json(data);
+        //}
 
         /// <summary>
         /// Route 

@@ -13,6 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180818113617_init.cs" />
+    <Compile Remove="Migrations\20180818113617_init.Designer.cs" />
+    <Compile Remove="Migrations\20180818131124_init.cs" />
+    <Compile Remove="Migrations\20180818131124_init.Designer.cs" />
+    <Compile Remove="Migrations\20180818142321_init.cs" />
+    <Compile Remove="Migrations\20180818142321_init.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="templateshbs\tile.hbs" />
   </ItemGroup>
 

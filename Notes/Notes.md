@@ -219,3 +219,16 @@ Use libraries from CDNs with RequireJS
 ### Add comments to articles
 
 ### Host on 
+
+
+
+
+## Context
+
+https://coding.abel.nu/2012/03/ef-migrations-command-reference/
+
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-2.1
+
+https://msdn.microsoft.com/en-us/library/jj591621(v=vs.113).aspx
+
+https://stackoverflow.com/questions/19902756/asp-net-identity-dbcontext-confusion
