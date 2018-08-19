@@ -50,19 +50,6 @@ namespace CosmicMixer.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("CosmicMixer.Entities.AuthorTag", b =>
-                {
-                    b.Property<int>("AuthorId");
-
-                    b.Property<int>("TagId");
-
-                    b.HasKey("AuthorId", "TagId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("AuthorTag");
-                });
-
             modelBuilder.Entity("CosmicMixer.Entities.Series", b =>
                 {
                     b.Property<int>("Id")
@@ -72,29 +59,12 @@ namespace CosmicMixer.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("TagId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.HasIndex("TagId");
-
                     b.ToTable("Series");
-                });
-
-            modelBuilder.Entity("CosmicMixer.Entities.SeriesAuthor", b =>
-                {
-                    b.Property<int>("SeriesId");
-
-                    b.Property<int>("AuthorId");
-
-                    b.HasKey("SeriesId", "AuthorId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.ToTable("SeriesAuthor");
                 });
 
             modelBuilder.Entity("CosmicMixer.Entities.Tag", b =>
@@ -129,8 +99,6 @@ namespace CosmicMixer.Migrations
 
                     b.Property<DateTime>("Published");
 
-                    b.Property<int?>("TagId");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50);
@@ -144,8 +112,6 @@ namespace CosmicMixer.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("TagId");
 
                     b.HasIndex("Title")
                         .IsUnique();
@@ -182,49 +148,12 @@ namespace CosmicMixer.Migrations
                     b.ToTable("TileTag");
                 });
 
-            modelBuilder.Entity("CosmicMixer.Entities.AuthorTag", b =>
-                {
-                    b.HasOne("CosmicMixer.Entities.Author", "Author")
-                        .WithMany("AuthorTags")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CosmicMixer.Entities.Tag", "Tag")
-                        .WithMany()
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("CosmicMixer.Entities.Series", b =>
-                {
-                    b.HasOne("CosmicMixer.Entities.Tag")
-                        .WithMany("Series")
-                        .HasForeignKey("TagId");
-                });
-
-            modelBuilder.Entity("CosmicMixer.Entities.SeriesAuthor", b =>
-                {
-                    b.HasOne("CosmicMixer.Entities.Author", "Author")
-                        .WithMany("SeriesAuthors")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CosmicMixer.Entities.Series", "Series")
-                        .WithMany("SeriesAuthors")
-                        .HasForeignKey("SeriesId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("CosmicMixer.Entities.Tile", b =>
                 {
                     b.HasOne("CosmicMixer.Entities.Author", "Author")
                         .WithMany("Tiles")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CosmicMixer.Entities.Tag")
-                        .WithMany("Tiles")
-                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("CosmicMixer.Entities.TileSeries", b =>
@@ -243,7 +172,7 @@ namespace CosmicMixer.Migrations
             modelBuilder.Entity("CosmicMixer.Entities.TileTag", b =>
                 {
                     b.HasOne("CosmicMixer.Entities.Tag", "Tag")
-                        .WithMany()
+                        .WithMany("Tiles")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
 

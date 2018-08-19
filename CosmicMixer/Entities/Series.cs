@@ -9,7 +9,6 @@ namespace CosmicMixer.Entities {
         public Series() {
 
             this.TileSeries = new List<TileSeries>();
-            this.SeriesAuthors = new List<SeriesAuthor>();
         }
 
         [Key]
@@ -20,8 +19,6 @@ namespace CosmicMixer.Entities {
         [MaxLength(100)]     
         public string Name { get; set; }
 
-        public ICollection<TileSeries> TileSeries { get; set; }
-
-        public ICollection<SeriesAuthor> SeriesAuthors { get; set; }
+        public ICollection<TileSeries> TileSeries { get; set; }        
     }
 }

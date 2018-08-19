@@ -14,8 +14,6 @@ namespace CosmicMixer.Entities {
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public ICollection<Tile> Tiles { get; set; }
-
-        public ICollection<Series> Series { get; set; }
+        public ICollection<TileTag> Tiles { get; set; }        
     }
 }

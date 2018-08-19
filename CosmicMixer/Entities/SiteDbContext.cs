@@ -9,7 +9,7 @@ namespace CosmicMixer.Entities {
         public DbSet<Series> Series { get; set; }
         public DbSet<Tag> Tags { get; set; }
 
-        public SiteDbContext(DbContextOptions<SiteDbContext> options):base(options) {
+        public SiteDbContext(DbContextOptions<SiteDbContext> options) : base(options) {
 
             Database.EnsureCreated();
         }
@@ -30,13 +30,7 @@ namespace CosmicMixer.Entities {
                 .HasKey(s => new { s.TileId, s.SeriesId });
 
             modelBuilder.Entity<TileTag>()
-                .HasKey(s => new { s.TileId, s.TagId });
-
-            modelBuilder.Entity<SeriesAuthor>()
-                .HasKey(s => new { s.SeriesId, s.AuthorId });
-
-            modelBuilder.Entity<AuthorTag>()
-                .HasKey(s => new { s.AuthorId, s.TagId });
+                .HasKey(s => new { s.TileId, s.TagId });            
 
             modelBuilder.Entity<Tile>()
                 .HasIndex(a => a.Title)

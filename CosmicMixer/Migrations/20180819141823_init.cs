@@ -26,6 +26,19 @@ namespace CosmicMixer.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Series",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Series", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tags",
                 columns: table => new
                 {
@@ -39,50 +52,6 @@ namespace CosmicMixer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AuthorTag",
-                columns: table => new
-                {
-                    AuthorId = table.Column<int>(nullable: false),
-                    TagId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AuthorTag", x => new { x.AuthorId, x.TagId });
-                    table.ForeignKey(
-                        name: "FK_AuthorTag_Authors_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Authors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AuthorTag_Tags_TagId",
-                        column: x => x.TagId,
-                        principalTable: "Tags",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Series",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
-                    TagId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Series", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Series_Tags_TagId",
-                        column: x => x.TagId,
-                        principalTable: "Tags",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Tiles",
                 columns: table => new
                 {
@@ -92,7 +61,6 @@ namespace CosmicMixer.Migrations
                     Edited = table.Column<DateTime>(nullable: false),
                     Header = table.Column<string>(maxLength: 50, nullable: false),
                     Published = table.Column<DateTime>(nullable: false),
-                    TagId = table.Column<int>(nullable: true),
                     Title = table.Column<string>(maxLength: 50, nullable: false),
                     UrlContent = table.Column<string>(nullable: false),
                     UrlImage = table.Column<string>(nullable: false)
@@ -104,36 +72,6 @@ namespace CosmicMixer.Migrations
                         name: "FK_Tiles_Authors_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Authors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Tiles_Tags_TagId",
-                        column: x => x.TagId,
-                        principalTable: "Tags",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SeriesAuthor",
-                columns: table => new
-                {
-                    SeriesId = table.Column<int>(nullable: false),
-                    AuthorId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SeriesAuthor", x => new { x.SeriesId, x.AuthorId });
-                    table.ForeignKey(
-                        name: "FK_SeriesAuthor_Authors_AuthorId",
-                        column: x => x.AuthorId,
-                        principalTable: "Authors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SeriesAuthor_Series_SeriesId",
-                        column: x => x.SeriesId,
-                        principalTable: "Series",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -200,25 +138,10 @@ namespace CosmicMixer.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorTag_TagId",
-                table: "AuthorTag",
-                column: "TagId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Series_Name",
                 table: "Series",
                 column: "Name",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Series_TagId",
-                table: "Series",
-                column: "TagId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SeriesAuthor_AuthorId",
-                table: "SeriesAuthor",
-                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tags_Name",
@@ -230,11 +153,6 @@ namespace CosmicMixer.Migrations
                 name: "IX_Tiles_AuthorId",
                 table: "Tiles",
                 column: "AuthorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tiles_TagId",
-                table: "Tiles",
-                column: "TagId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tiles_Title",
@@ -262,12 +180,6 @@ namespace CosmicMixer.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AuthorTag");
-
-            migrationBuilder.DropTable(
-                name: "SeriesAuthor");
-
-            migrationBuilder.DropTable(
                 name: "TileSeries");
 
             migrationBuilder.DropTable(
@@ -277,13 +189,13 @@ namespace CosmicMixer.Migrations
                 name: "Series");
 
             migrationBuilder.DropTable(
+                name: "Tags");
+
+            migrationBuilder.DropTable(
                 name: "Tiles");
 
             migrationBuilder.DropTable(
                 name: "Authors");
-
-            migrationBuilder.DropTable(
-                name: "Tags");
         }
     }
 }
