@@ -7,8 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmicMixer", "CosmicMixer\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{DC8956D8-44F4-4E6E-A4EC-DFAF96B41949}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
 		Notes\CSS.md = Notes\CSS.md
+		Notes\jQuery.md = Notes\jQuery.md
 		Notes\Notes.md = Notes\Notes.md
 	EndProjectSection
 EndProject
@@ -51,6 +51,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "favicons", "favicons", "{A0
 		SolutionAssets\favicons\ms-icon-150x150.png = SolutionAssets\favicons\ms-icon-150x150.png
 		SolutionAssets\favicons\ms-icon-310x310.png = SolutionAssets\favicons\ms-icon-310x310.png
 		SolutionAssets\favicons\ms-icon-70x70.png = SolutionAssets\favicons\ms-icon-70x70.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B92946F2-4CCD-44F0-B691-0CFEFD12CB18}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global

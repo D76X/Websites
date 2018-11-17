@@ -1,3 +1,4 @@
+**/**/obj
 **/*.cache
 **/.vs
 **/.vscode
@@ -7,6 +8,8 @@
 **/CosmicMixer/bin
 **/CosmicMixer/obj
 **/CosmicMixer/obj/*.cache
+**/CosmicMixer/obj/**/*.cache
 **/CosmicMixer/wwwroot/libs/*.js
 **/CosmicMixer/wwwroot/js/templates.js
 /node_modules
+

@@ -49,7 +49,7 @@ You must learn how to set up the watcher build on the web project so that the si
 ```
 <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
-  </ItemGroup>
+</ItemGroup>
 ```
 
 Afterwards run the following command.
