@@ -1,8 +1,7 @@
-**/**/obj
 **/*.cache
 **/.vs
 **/.vscode
-**/OldCosmicMixer
+**/**/obj
 **/CosmicMixer/.vscode
 **/CosmicMixer/node_modules
 **/CosmicMixer/bin
@@ -11,7 +10,6 @@
 **/CosmicMixer/obj/**/*.cache
 **/CosmicMixer/wwwroot/libs/*.js
 **/CosmicMixer/wwwroot/js/templates.js
-/node_modules
 
 ## Stop stracking files
 ## https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
