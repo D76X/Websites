@@ -3,7 +3,7 @@ var gulp = require('gulp');
 //https://github.com/jackfranklin/gulp-load-plugins
 //https://stackoverflow.com/questions/33388559/how-to-use-gulp-load-plugins-with-browser-sync
 var plugins = require('gulp-load-plugins')({
-    pattern: '*',
+    pattern: '*'
 });
 
 // https://andy-carter.com/blog/automatically-load-gulp-plugins-with-gulp-load-plugins
@@ -20,4 +20,4 @@ gulp.task('browser-sync', ['templateshbs'], require('./gulp/browser-sync')(gulp,
 gulp.task('browser-sync-reload', require('./gulp/browser-sync-reload')(gulp, plugins));
 gulp.task('watch', ['browser-sync'], require('./gulp/watch')(gulp, plugins));
 gulp.task('templateshbs', require('./gulp/templateshbs')(gulp, plugins));
-gulp.task('default', ['templateshbs', 'browser-sync', 'watch'])
+gulp.task('default', ['templateshbs', 'browser-sync', 'watch']);
