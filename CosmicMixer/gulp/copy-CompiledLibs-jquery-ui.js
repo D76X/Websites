@@ -4,7 +4,9 @@ module.exports = function (gulp, plugins) {
 
     return function () {
         try {
-            gulp.src('./node_modules/handlebars/dist/handlebars.min.js')
+
+            gulp.src('./CompiledLibs/jqueryui-1.9.2-min.js')
+                .pipe(plugins.rename('jqueryui-1.9.2-min.js'))
                 .pipe(gulp.dest('./wwwroot/libs'));
         }
         catch (e) {

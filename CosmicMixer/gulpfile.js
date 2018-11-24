@@ -10,8 +10,9 @@ var plugins = require('gulp-load-plugins')({
 // https://medium.com/@dave_lunny/task-dependencies-in-gulp-b885c1ab48f0
 gulp.task('copy-node_modules-requirejs', require('./gulp/copy-node_modules-requirejs')(gulp, plugins));
 gulp.task('copy-node_modules-jquery', require('./gulp/copy-node_modules-jquery')(gulp, plugins));
-gulp.task('copy-node_modules-handlebars', require('./gulp/copy-node_modules-handlebars')(gulp, plugins));
 gulp.task('copy-node_modules-handlebars-runtime', require('./gulp/copy-node_modules-handlebars-runtime')(gulp, plugins));
+
+gulp.task('copy-CompiledLibs-jquery-ui', require('./gulp/copy-CompiledLibs-jquery-ui')(gulp, plugins));
 
 // bundling and minification
 gulp.task('minify-js', require('./gulp/minify-js')(gulp, plugins));
