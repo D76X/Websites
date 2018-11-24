@@ -42,24 +42,25 @@ namespace CosmicMixer.Entities {
 
         public ICollection<TileSeries> TileSeries { get; set; }
 
-        //public Tile(
-        //    int id,
-        //    string header,
-        //    string title,
-        //    string urlImage,
-        //    string urlContent,
-        //    //string author,
-        //    Author author,
-        //    string urlAuthor,
-        //    string published) {
-        //    this.Id = id;
-        //    this.Header = header;
-        //    this.Title = title;
-        //    this.UrlImage = urlImage;
-        //    this.UrlContent = urlContent;
-        //    //this.Author = author;
-        //    //this.UrlAuthor = urlAuthor;
-        //    this.Published = published;
-        //}
+        public Tile(
+            int id,
+            string header,
+            string title,
+            string urlImage,
+            string urlContent,
+            //string author,
+            Author author,
+            string urlAuthor,
+            string published)
+        {
+            this.Id = id;
+            this.Header = header;
+            this.Title = title;
+            this.UrlImage = urlImage;
+            this.UrlContent = urlContent;
+            //this.Author = author;
+            //this.UrlAuthor = urlAuthor;
+            //this.Published = published;
+        }
     }
 }
