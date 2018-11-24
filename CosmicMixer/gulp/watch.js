@@ -1,4 +1,4 @@
-﻿'use strict'
+﻿'use strict';
 
 module.exports = function (gulp, plugins) {
 
@@ -13,5 +13,5 @@ module.exports = function (gulp, plugins) {
             ['templateshbs',
                 'minify-js',
                 'browser-sync-reload']);
-    }
+    };
 };

@@ -1,4 +1,4 @@
-﻿'use strict'
+﻿'use strict';
 
 var gutil = require('gulp-util');
 
@@ -24,7 +24,7 @@ module.exports = function (gulp, plugins) {
         // https://github.com/gulp-sourcemaps/gulp-sourcemaps
 
         // do not re-uglify the output file itsef!
-        var minifiedjs = gulp.src([ 
+        var minifiedjs = gulp.src([
             '!./wwwroot/js/site.optimized.min.js',
             './wwwroot/js/**/*.js'
         ])
@@ -46,12 +46,12 @@ module.exports = function (gulp, plugins) {
             // into a single stream
             //.pipe(plugins.sourcemaps.init())
             .pipe(plugins.concat('libs.min.js'))
-            //.pipe(plugins.sourcemaps.write("."));
+        //.pipe(plugins.sourcemaps.write("."));
 
         return plugins.mergeStream(minifiedlibs, minifiedjs)
             //.pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat('site.optimized.min.js')) 
+            .pipe(plugins.concat('site.optimized.min.js'))
             //.pipe(plugins.sourcemaps.write("."))
             .pipe(gulp.dest('./wwwroot/js/'));
-    }
-}
+    };
+};

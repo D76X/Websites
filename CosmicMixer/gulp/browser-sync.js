@@ -1,4 +1,4 @@
-﻿'use strict'
+﻿'use strict';
 
 module.exports = function (gulp, plugins) {
 
@@ -8,7 +8,7 @@ module.exports = function (gulp, plugins) {
             proxy: "localhost:53436",
             ui: {
                 port: 53437
-            },
+            }
         });
-    }
+    };
 };

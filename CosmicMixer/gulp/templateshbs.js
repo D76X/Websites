@@ -1,4 +1,4 @@
-﻿'use strict'
+﻿'use strict';
 
 var path = require('path');
 
@@ -31,7 +31,7 @@ module.exports = function (gulp, plugins) {
             // declare a namespace for the precompiled templates
             .pipe(plugins.declare({
                 namespace: 'Hbs.templates',
-                noRedeclare: true,
+                noRedeclare: true
             }));
 
         // merge the streams
@@ -39,5 +39,5 @@ module.exports = function (gulp, plugins) {
         return plugins.mergeStream(partials, templates)
             .pipe(plugins.concat('templates.js'))
             .pipe(gulp.dest('./wwwroot/js/'));
-    }
+    };
 };

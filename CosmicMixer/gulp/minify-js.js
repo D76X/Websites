@@ -1,8 +1,8 @@
-﻿'use strict'
+﻿'use strict';
 
 module.exports = function (gulp, plugins) {
 
-    return function () {       
+    return function () {
         return 0;
-    }
+    };
 };
