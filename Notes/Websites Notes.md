@@ -22,7 +22,7 @@
 * [APS.NET Core Fundamentals](https://app.pluralsight.com/library/courses/aspdotnet-core-fundamentals/table-of-contents?aid=701j0000001heIpAAI)
 * [TUTORIAL: CREATING BASIC ASP.NET CORE + ANGULAR 4 APPLICATION IN WINDOWS 10](https://www.infopulse.com/blog/tutorial-creating-basic-asp-net-core-angular-4-application-in-windows-10/)
 
-## Configuration
+## ASP.Net Core Configuration
 
 Startup.cs is where most of the configuration is added the Startup.Configuration implements IConfiguration and IConfiguration is just a bit more of a dictionary. There are four sources of configuration which are picked up by the run time in the presented order below that is if a later source of setting redeclares a setting with the same key of a setting already added by ony of the upstream sources the setting value will be overwritten.
 
@@ -80,7 +80,9 @@ Now set appropriate breakpoint in the relevant _cshtml and or _.cs files and rel
 
 ---
 
-### Set up a client side watch for automatic browser refreshing.
+## Gulp Task Runner and Watcher 
+
+### Client side watch & automatic browser refreshing.
 
 1.  [Build Layout with CSS Grid - Development Environment](https://app.pluralsight.com/player?course=building-layouts-css-grid&author=gary-simon&name=5250b241-9183-439d-b8ec-c1e09e05cf66&clip=3&mode=live)
 1.  [Asp.Net Core 1.0 (aka Asp.Net 5) website refresh with any file change?
@@ -100,12 +102,16 @@ There are a few ways to achieve this sort of set up we have used the following.
     * `npm init -y`
 
     This creats a `package.json` file in the solution
+    
+---
+
+### Use Gulp as Task Runner.
 
 3.  Install **Gulp** as a development dependency with the following command.
 
     -`npm install browser-sync gulp --save-dev`
 
-4.  Create `gulpfile.js` at the root of you project then add the following gulp task to it. Notice tha in the script below the default task is set to run `'browser-sync'` as `default` task but this might change in time according to you needs.
+4.  Create `gulpfile.js` at the root of you project then add the following gulp task to it. Notice that in the script below the default task is set to run `'browser-sync'` as `default` task but this might change in time according to you needs.
 
     ```
     var gulp = require('gulp');
@@ -122,14 +128,15 @@ There are a few ways to achieve this sort of set up we have used the following.
             },
         });
     ```
-
+    ```
 
         // watch on every file in evry folder - it works but it is heavy handed
         // gulp.watch(["./**/*.*"]).on('change', browserSync.reload);
 
         gulp.watch(["./**/*.html", "./**/*.css", "./**/*.cshtml"])
         .on('change', browserSync.reload);
-    })  
+    }) ;
+
     ```
 
     Few things to notice.
@@ -143,6 +150,8 @@ There are a few ways to achieve this sort of set up we have used the following.
 
         ```npx gulp```
 
+In Visual Studio an alternative way to interact with the gulpfile.js is by means of the **Task Runner Explorer**.
+
 References
 
 * [Why do we need to install gulp globally and locally?
@@ -150,6 +159,16 @@ References
 * [Browsersync Time-saving synchronised browser testing.](https://browsersync.io/)
 * [Browsersync + Gulp.js](https://browsersync.io/docs/gulp)
 * [Browsersync options](https://browsersync.io/docs/options)
+
+---
+
+### Should I use Gulp?
+
+https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification?tabs=visual-studio%2Caspnetcore2x
+
+#### Task Runner Explorer errors parsing gulpfine.js
+
+[Error running Gulpfile from Visual Studio 2015 task runner](https://stackoverflow.com/questions/40372213/error-running-gulpfile-from-visual-studio-2015-task-runner)
 
 ---
 
@@ -165,14 +184,6 @@ https://app.pluralsight.com/library/courses/webpack-fundamentals/table-of-conten
 https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink?tabs=aspnetcore2x
 
 ---
-
-### Use Gulp?
-
-https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification?tabs=visual-studio%2Caspnetcore2x
-
-#### Task Runner Explorer errors parsing gulpfine.js
-
-[Error running Gulpfile from Visual Studio 2015 task runner](https://stackoverflow.com/questions/40372213/error-running-gulpfile-from-visual-studio-2015-task-runner)
 
 ### CDNs
 
