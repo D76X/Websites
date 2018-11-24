@@ -30,6 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="CompiledLibs\jqueryui-1.9.2-min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CompiledLibs\jqueryui-1.9.2-min.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="templateshbs\tile.hbs" />
   </ItemGroup>
 
