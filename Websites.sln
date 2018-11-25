@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeRambo", "CosmicMixer\CodeRambo.csproj", "{A9F80B67-DDFF-4626-BD8E-544079B3B284}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{DC8956D8-44F4-4E6E-A4EC-DFAF96B41949}"
 	ProjectSection(SolutionItems) = preProject
 		Notes\CSS.md = Notes\CSS.md
@@ -58,16 +56,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeRambo", "CodeRambo\CodeRambo.csproj", "{6A9D9FA3-FC15-4F35-854D-2083E42C1DEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A9F80B67-DDFF-4626-BD8E-544079B3B284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9F80B67-DDFF-4626-BD8E-544079B3B284}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9F80B67-DDFF-4626-BD8E-544079B3B284}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9F80B67-DDFF-4626-BD8E-544079B3B284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A9D9FA3-FC15-4F35-854D-2083E42C1DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9D9FA3-FC15-4F35-854D-2083E42C1DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9D9FA3-FC15-4F35-854D-2083E42C1DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9D9FA3-FC15-4F35-854D-2083E42C1DEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
