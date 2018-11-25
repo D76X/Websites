@@ -172,22 +172,18 @@ https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minificati
 
 ---
 
-### Webpack
+## Webpack
 
 http://www.ryansouthgate.com/2017/08/29/asp-net-core-and-webpack-part-1/
 https://app.pluralsight.com/library/courses/webpack-fundamentals/table-of-contents
 
 ---
 
-### BrowserLink
+## Web Development in Visual Studio
 
-https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink?tabs=aspnetcore2x
+### BrowserLink in Visual Studio
 
----
-
-### CDNs
-
-https://www.asp.net/ajax/cdn?WT.mc_id=12833-DEV-sitepoint-othercontent#ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18
+- [Browser Link in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink?tabs=aspnetcore2x)
 
 ### Format Razor views in Visual Studio Code
 
@@ -195,7 +191,18 @@ https://www.asp.net/ajax/cdn?WT.mc_id=12833-DEV-sitepoint-othercontent#ajaxmicro
 
 ---
 
-### RequireJS
+## CDNs
+
+https://www.asp.net/ajax/cdn?WT.mc_id=12833-DEV-sitepoint-othercontent#ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18
+
+### Some popular CDNs
+
+1. [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
+2. [Cloudfare](https://cdnjs.cloudflare.com)
+
+---
+
+## RequireJS
 
 Set up the baseUrl to point to wwwroot.
 
@@ -214,25 +221,21 @@ Use libraries from CDNs with RequireJS
 
 ---
 
-### CDNs
+## Favicon
 
-1. [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
-2. [Cloudfare](https://cdnjs.cloudflare.com)
+1. [How do I force a favicon refresh](https://stackoverflow.com/questions/2208933/how-do-i-force-a-favicon-refresh)
 
 ---
 
-### Favicon
+## NPM
 
-1. [How do I force a favicon refresh](https://stackoverflow.com/questions/2208933/how-do-i-force-a-favicon-refresh)
+- [Everything You Wanted To Know About package-lock.json But Were Too Afraid To Ask](https://medium.com/coinmonks/everything-you-wanted-to-know-about-package-lock-json-b81911aa8ab8)
 
 ---
 
 ### Add comments to articles
 
 ### Host on 
-
-
-
 
 ## Context
 
