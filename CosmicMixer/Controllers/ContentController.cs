@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CosmicMixer.Controllers {
+namespace CodeRambo.Controllers {
 
     public class ArticleModel {
 

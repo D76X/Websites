@@ -1,5 +1,5 @@
 {
-  "name": "cosmicmixer",
+  "name": "CodeRambo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "New Thinking Technologies",
   "license": "ISC",
-  "description": "Cosmix Mixer is a shared knowledge site.",
+  "description": "Code Rambo is for survival coding training.",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",

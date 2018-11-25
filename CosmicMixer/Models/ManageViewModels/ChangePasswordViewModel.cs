@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CosmicMixer.Models.ManageViewModels
+namespace CodeRambo.Models.ManageViewModels
 {
     public class ChangePasswordViewModel
     {

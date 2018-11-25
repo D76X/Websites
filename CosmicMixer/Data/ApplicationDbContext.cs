@@ -1,8 +1,8 @@
-﻿using CosmicMixer.Models;
+﻿using CodeRambo.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CosmicMixer.Data {
+namespace CodeRambo.Data {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

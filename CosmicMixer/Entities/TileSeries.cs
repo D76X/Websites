@@ -1,4 +1,4 @@
-﻿namespace CosmicMixer.Entities {
+﻿namespace CodeRambo.Entities {
     public class TileSeries {
 
         public int TileId { get; set; }

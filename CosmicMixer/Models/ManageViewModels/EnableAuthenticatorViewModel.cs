@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace CosmicMixer.Models.ManageViewModels
+namespace CodeRambo.Models.ManageViewModels
 {
     public class EnableAuthenticatorViewModel
     {

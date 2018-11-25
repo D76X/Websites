@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace CosmicMixer.Migrations
+namespace CodeRambo.Migrations
 {
     public partial class init : Migration
     {

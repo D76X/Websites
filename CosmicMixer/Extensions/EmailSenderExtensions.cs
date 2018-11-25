@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using CosmicMixer.Services;
+using CodeRambo.Services;
 
-namespace CosmicMixer.Services
+namespace CodeRambo.Services
 {
     public static class EmailSenderExtensions
     {

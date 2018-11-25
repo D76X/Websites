@@ -1,6 +1,6 @@
 using System;
 
-namespace CosmicMixer.Models
+namespace CodeRambo.Models
 {
     public class ErrorViewModel
     {

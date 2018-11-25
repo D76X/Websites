@@ -1,4 +1,4 @@
-﻿namespace CosmicMixer.Entities {
+﻿namespace CodeRambo.Entities {
 
     public class TileTag  {
 

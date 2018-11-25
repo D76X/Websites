@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CosmicMixer.Services
+namespace CodeRambo.Services
 {
     public interface IEmailSender
     {

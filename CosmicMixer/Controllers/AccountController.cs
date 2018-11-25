@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using CosmicMixer.Models;
-using CosmicMixer.Models.AccountViewModels;
-using CosmicMixer.Services;
+using CodeRambo.Models;
+using CodeRambo.Models.AccountViewModels;
+using CodeRambo.Services;
 
-namespace CosmicMixer.Controllers
+namespace CodeRambo.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]

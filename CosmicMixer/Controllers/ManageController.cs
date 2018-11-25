@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using CosmicMixer.Models;
-using CosmicMixer.Models.ManageViewModels;
-using CosmicMixer.Services;
+using CodeRambo.Models;
+using CodeRambo.Models.ManageViewModels;
+using CodeRambo.Services;
 
-namespace CosmicMixer.Controllers
+namespace CodeRambo.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
@@ -522,7 +522,7 @@ namespace CosmicMixer.Controllers
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("CosmicMixer"),
+                _urlEncoder.Encode("CodeRambo"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

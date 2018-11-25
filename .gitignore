@@ -2,14 +2,14 @@
 **/.vs
 **/.vscode
 **/**/obj
-**/CosmicMixer/.vscode
-**/CosmicMixer/node_modules
-**/CosmicMixer/bin
-**/CosmicMixer/obj
-**/CosmicMixer/obj/*.cache
-**/CosmicMixer/obj/**/*.cache
-**/CosmicMixer/wwwroot/libs/*.js
-**/CosmicMixer/wwwroot/js/templates.js
+**/CodeRambo/.vscode
+**/CodeRambo/node_modules
+**/CodeRambo/bin
+**/CodeRambo/obj
+**/CodeRambo/obj/*.cache
+**/CodeRambo/obj/**/*.cache
+**/CodeRambo/wwwroot/libs/*.js
+**/CodeRambo/wwwroot/js/templates.js
 
 ## Stop stracking files
 ## https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore

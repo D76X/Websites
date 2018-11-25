@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CosmicMixer.Entities {
+namespace CodeRambo.Entities {
 
     public class SiteDbContext : DbContext {
 

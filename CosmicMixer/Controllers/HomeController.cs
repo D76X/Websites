@@ -1,11 +1,11 @@
-﻿using CosmicMixer.Entities;
-using CosmicMixer.Models;
+﻿using CodeRambo.Entities;
+using CodeRambo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CosmicMixer.Controllers {    
+namespace CodeRambo.Controllers {    
 
     public class HomeController : Controller {
 

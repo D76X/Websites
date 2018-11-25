@@ -1,7 +1,7 @@
-﻿using CosmicMixer.Data;
-using CosmicMixer.Entities;
-using CosmicMixer.Models;
-using CosmicMixer.Services;
+﻿using CodeRambo.Data;
+using CodeRambo.Entities;
+using CodeRambo.Models;
+using CodeRambo.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace CosmicMixer {
+namespace CodeRambo {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
